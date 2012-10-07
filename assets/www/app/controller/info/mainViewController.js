@@ -47,8 +47,9 @@ Ext.define("Project.controller.info.mainViewController", {
 		if (callback) {
 			DB.activatedStore.load({
 				callback : function (records, operation, success, eOpts) {
-					if (records.length == 0 && infoPageNum != 1) {
+					if (records.length == 0 && infoPageNum > 2) {
 						infoPageNum = infoPageNum - 1;
+						DB.activatedStore.load();
 					}
 				}
 			});
@@ -58,7 +59,9 @@ Ext.define("Project.controller.info.mainViewController", {
 	},
 	// 上一页
 	onPrevPageBtnAtInfoMainViewTap : function () {
-		if (infoPageNum != 1) {
+		if (infoPageNum == 1) {
+			Ext.Msg.alert("掌上 • 英山 v1.0.0", "已是第一页！");
+		} else {
 			infoPageNum = infoPageNum - 1;
 			this.reloadStore();
 		}

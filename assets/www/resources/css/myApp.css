@@ -1,54 +1,3 @@
-.baccyBuyList .x-list-item .x-list-item-label {
-  	height : 102px;
-}
-
-.baccyBuyList .listTitle {
-	font-size : 0.9em; 
-	white-space : nowrap;  
-    overflow : hidden; 
-}
-
-.baccyBuyList .listDescription {
-	margin-top : 5px;
-	font-size: 0.7em; 
-	width : 50%;	
-	float : left;
-	overflow : hidden; 
-	white-space : nowrap;  
-}
-.baccyBuyList .publishtime {
-	margin-top : 5px;
-	font-size : 0.6em;
-    color : #808080;
-}
-
-.baccyBuyList .comment {
-     float : right;	 
-}
-
-.expertGuideList .x-list-item .x-list-item-label {
-	height: 70px;
-}
-
-.expertGuideList .guideListDescription {
-	margin-top: 3px;
-	max-height: 45px;
-}
-
-.expertGuideList .listTitle {
-	font-size: 0.9em;
-	white-space: nowrap;
-	overflow: hidden;
-}
-
-.expertGuideList .listDescription {
-	margin-top: 10px;
-	font-size: 0.8em;
-	color: #808080;
-	white-space: nowrap;
-	overflow: hidden;
-}
-
 /*
 	信息列表样式
 */
@@ -139,20 +88,22 @@
 .carouselTitle
 {
 	font-size : 1em;
-	color : #808080;
-	padding-left : 1em;
+   	text-align : center;
+	color : #4B4B4B;
 	padding-top : 0.5em;
 	padding-bottom : 0.2em;
 	margin-bottom : -0.5em;
 }
 
 /*
-	天气栏侧边栏样式
+	广告栏样式
 */
-.weatherTitle
+.adImage
 {
-	font-size : 1em;
-	color : #808080;
+	height : auto;
+	width : 100%;
 	padding-left : 1em;
-	padding-bottom : 1em;
+	padding-right : 1em;
+	padding-top : 0.5em;
+	padding-bottom : 0.5em;
 }

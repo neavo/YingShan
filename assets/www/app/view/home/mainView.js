@@ -6,34 +6,24 @@ Ext.define("Project.view.home.mainView", {
 		items : [{
 				xtype : "toolbar",
 				flex : 1,
-				title : "恩施 • 烟草通",
+				title : "掌上 • 英山",
 				docked : "top",
 			}, {
 				xtype : "spacer",
 				height : 5,
 			}, {
 				xtype : "formpanel",
-				flex : 2.5,
+				flex : 2.3,
 				layout : "fit",
 				scrollable : false,
-				items : [{
-						xtype : "container",
-						docked : "top",
-						html : "<div class = weatherTitle><b>农业气象</b></div>",
-					}, {
-						xtype : "formpanel",
-						title : "农业气象",
-						//html:"<img src='resources/images/weather.png' style='max-height:200px;max-width:200px'>"
-						//html : "<img class = carouselListImage src=resources/images/weather.png />",
-						//src : "resources/images/weather.png",
-					},
-				],
+				title : "农业气象",
+				html : "<div><img class = adImage src=resources/images/ad_01.jpg /></div>",
 			}, {
 				xtype : "spacer",
 				height : 5,
 			}, {
 				xtype : "formpanel",
-				flex : 5.5,
+				flex : 5.7,
 				layout : "fit",
 				scrollable : "horizontal",
 				items : [{
@@ -45,15 +35,15 @@ Ext.define("Project.view.home.mainView", {
 								scrollable : false,
 								ui : "round",
 								onItemDisclosure : true,
-								html : "<div class = carouselTitle><b>烟草资讯</b></div>",
+								html : "<div class = carouselTitle><b>英山政务</b></div>",
 								data : [{
-										name : "农业新闻",
+										name : "走进英山",
 										imageSrc : "resources/icons/01.png",
 									}, {
-										name : "市场分析",
+										name : "英山新闻",
 										imageSrc : "resources/icons/02.png",
 									}, {
-										name : "政策法规",
+										name : "政策长廊",
 										imageSrc : "resources/icons/03.png",
 									},
 								],
@@ -66,15 +56,15 @@ Ext.define("Project.view.home.mainView", {
 								scrollable : false,
 								ui : "round",
 								onItemDisclosure : true,
-								html : "<div class = carouselTitle><b>烟草恩施</b></div>",
+								html : "<div class = carouselTitle><b>英山旅游</b></div>",
 								data : [{
-										name : "恩施新闻",
+										name : "景区介绍",
 										imageSrc : "resources/icons/04.png",
 									}, {
-										name : "名优品种",
+										name : "旅游服务",
 										imageSrc : "resources/icons/05.png",
 									}, {
-										name : "烟草技术",
+										name : "在线预订",
 										imageSrc : "resources/icons/06.png",
 									},
 								],
@@ -87,16 +77,16 @@ Ext.define("Project.view.home.mainView", {
 								scrollable : false,
 								ui : "round",
 								onItemDisclosure : true,
-								html : "<div class = carouselTitle><b>专家指导</b></div>",
+								html : "<div class = carouselTitle><b>开放英山</b></div>",
 								data : [{
-										name : "问题列表",
-										imageSrc : "resources/icons/07.png",
+										name : "招商指南",
+										imageSrc : "resources/icons/01.png",
 									}, {
-										name : "电话咨询",
-										imageSrc : "resources/icons/07.png",
+										name : "招商成果",
+										imageSrc : "resources/icons/05.png",
 									}, {
-										name : "在线提问",
-										imageSrc : "resources/icons/07.png",
+										name : "项目介绍",
+										imageSrc : "resources/icons/04.png",
 									},
 								],
 								itemTpl : "<img class = carouselListImage src={imageSrc} />"
@@ -108,16 +98,58 @@ Ext.define("Project.view.home.mainView", {
 								scrollable : false,
 								ui : "round",
 								onItemDisclosure : true,
-								html : "<div class = carouselTitle><b>供求热线</b></div>",
+								html : "<div class = carouselTitle><b>科技英山</b></div>",
 								data : [{
-										name : "我要供应",
-										imageSrc : "resources/icons/08.png",
+										name : "创新科技",
+										imageSrc : "resources/icons/05.png",
 									}, {
-										name : "我要收购",
-										imageSrc : "resources/icons/08.png",
+										name : "科技产业",
+										imageSrc : "resources/icons/01.png",
 									}, {
-										name : "发布信息",
-										imageSrc : "resources/icons/08.png",
+										name : "12396在线",
+										imageSrc : "resources/icons/04.png",
+									},
+								],
+								itemTpl : "<img class = carouselListImage src={imageSrc} />"
+								 + "<div class = carouselListTexts><b>{name}</b></div>"
+							},{
+								id : "carouselList_05",
+								xtype : "list",
+								cls : "carouselList",
+								scrollable : false,
+								ui : "round",
+								onItemDisclosure : true,
+								html : "<div class = carouselTitle><b>健康英山</b></div>",
+								data : [{
+										name : "健康教育",
+										imageSrc : "resources/icons/04.png",
+									}, {
+										name : "政策法规",
+										imageSrc : "resources/icons/05.png",
+									}, {
+										name : "在线服务",
+										imageSrc : "resources/icons/01.png",
+									},
+								],
+								itemTpl : "<img class = carouselListImage src={imageSrc} />"
+								 + "<div class = carouselListTexts><b>{name}</b></div>"
+							},{
+								id : "carouselList_06",
+								xtype : "list",
+								cls : "carouselList",
+								scrollable : false,
+								ui : "round",
+								onItemDisclosure : true,
+								html : "<div class = carouselTitle><b>英山茶叶</b></div>",
+								data : [{
+										name : "茶叶市场",
+										imageSrc : "resources/icons/01.png",
+									}, {
+										name : "茶技推广",
+										imageSrc : "resources/icons/05.png",
+									}, {
+										name : "专家在线",
+										imageSrc : "resources/icons/04.png",
 									},
 								],
 								itemTpl : "<img class = carouselListImage src={imageSrc} />"
@@ -131,6 +163,7 @@ Ext.define("Project.view.home.mainView", {
 				flex : 1,
 				docked : "bottom",
 				items : [{
+						id : "updateBtnAtHomeView",
 						xtype : "button",
 						text : "更新",
 						ui : "back",
