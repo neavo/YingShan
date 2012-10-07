@@ -1,0 +1,158 @@
+.baccyBuyList .x-list-item .x-list-item-label {
+  	height : 102px;
+}
+
+.baccyBuyList .listTitle {
+	font-size : 0.9em; 
+	white-space : nowrap;  
+    overflow : hidden; 
+}
+
+.baccyBuyList .listDescription {
+	margin-top : 5px;
+	font-size: 0.7em; 
+	width : 50%;	
+	float : left;
+	overflow : hidden; 
+	white-space : nowrap;  
+}
+.baccyBuyList .publishtime {
+	margin-top : 5px;
+	font-size : 0.6em;
+    color : #808080;
+}
+
+.baccyBuyList .comment {
+     float : right;	 
+}
+
+.expertGuideList .x-list-item .x-list-item-label {
+	height: 70px;
+}
+
+.expertGuideList .guideListDescription {
+	margin-top: 3px;
+	max-height: 45px;
+}
+
+.expertGuideList .listTitle {
+	font-size: 0.9em;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.expertGuideList .listDescription {
+	margin-top: 10px;
+	font-size: 0.8em;
+	color: #808080;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+/*
+	信息列表样式
+*/
+.infoList .x-list-item {
+	height : 5.1em;
+}
+.infoList .x-list-item .x-list-item-label {
+	height : 5.1em;
+}
+.infoListImage {
+	width : 4em;
+	height : 4em;
+	float : left;
+}
+.infoListTitle {
+	text-align : center;
+	font-size : 0.9em;
+	line-height : 1.2em;
+	height : 2.4em;
+	padding-left : 0.9em;
+	overflow : hidden;
+}
+.infoListData {
+	text-align : center;
+	font-size : 0.6em;
+	margin-top : 0.5em;
+	color :  #808080;
+	padding-left : 1.2em;
+	overflow : hidden;
+}
+.infoListPubliser {
+	text-align : center;
+	font-size : 0.6em;
+	margin-top : 0.5em;
+	color :  #808080;
+	padding-left : 1.2em;
+	overflow : hidden;
+}
+
+/*
+	信息详细视图样式
+*/
+.infoDetailTitle {	
+   	text-align : center;
+	padding-left : 1.5em;
+	padding-right : 1.5em;
+   	font-size : 1.2em;
+}
+.infoDetailDataTime {
+	margin-top : 0.25em;
+	margin-bottom : 0.25em;
+   	text-align : center;
+   	font-size : 0.9em;
+}
+.infoDetailContent {
+    font-size : 1em;
+	margin-top : 0.5em;
+	line-height : 1.5em; 
+}
+
+/*
+	导航列表样式
+*/
+.carouselList .x-list-item {
+	height : 4em;
+}
+.carouselList .x-list-item .x-list-item-label {
+	height : 4em;
+}
+.carouselList .x-list-disclosure {
+	padding-bottom : 2.2em;
+}
+.carouselListImage {
+	max-height : 3.2em;
+	float : left;
+}
+.carouselListTexts {
+	font-size : 1.2em;
+	height : 3.2em; 
+	line-height : 2.5em; 
+	padding-left : 20px;
+	overflow : hidden; 
+}
+
+/*
+	导航栏侧边栏样式
+*/
+.carouselTitle
+{
+	font-size : 1em;
+	color : #808080;
+	padding-left : 1em;
+	padding-top : 0.5em;
+	padding-bottom : 0.2em;
+	margin-bottom : -0.5em;
+}
+
+/*
+	天气栏侧边栏样式
+*/
+.weatherTitle
+{
+	font-size : 1em;
+	color : #808080;
+	padding-left : 1em;
+	padding-bottom : 1em;
+}
