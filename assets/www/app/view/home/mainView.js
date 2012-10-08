@@ -85,13 +85,13 @@ Ext.define("Project.view.home.mainView", {
 						html : "<div class = carouselTitle><b>开放英山</b></div>",
 						data : [{
 								name : "招商指南",
-								imageSrc : "resources/icons/01.png",
+								imageSrc : "resources/icons/07.png",
 							}, {
 								name : "招商成果",
-								imageSrc : "resources/icons/05.png",
+								imageSrc : "resources/icons/08.png",
 							}, {
 								name : "项目介绍",
-								imageSrc : "resources/icons/04.png",
+								imageSrc : "resources/icons/09.png",
 							},
 						],
 						itemTpl : "<img class = carouselListImage src={imageSrc} />"
@@ -106,13 +106,13 @@ Ext.define("Project.view.home.mainView", {
 						html : "<div class = carouselTitle><b>科技英山</b></div>",
 						data : [{
 								name : "创新科技",
-								imageSrc : "resources/icons/05.png",
+								imageSrc : "resources/icons/10.png",
 							}, {
 								name : "科技产业",
-								imageSrc : "resources/icons/01.png",
+								imageSrc : "resources/icons/11.png",
 							}, {
 								name : "12396在线",
-								imageSrc : "resources/icons/04.png",
+								imageSrc : "resources/icons/12.png",
 							},
 						],
 						itemTpl : "<img class = carouselListImage src={imageSrc} />"
@@ -127,13 +127,13 @@ Ext.define("Project.view.home.mainView", {
 						html : "<div class = carouselTitle><b>健康英山</b></div>",
 						data : [{
 								name : "健康教育",
-								imageSrc : "resources/icons/04.png",
+								imageSrc : "resources/icons/13.png",
 							}, {
 								name : "政策法规",
-								imageSrc : "resources/icons/05.png",
+								imageSrc : "resources/icons/14.png",
 							}, {
 								name : "在线服务",
-								imageSrc : "resources/icons/01.png",
+								imageSrc : "resources/icons/15.png",
 							},
 						],
 						itemTpl : "<img class = carouselListImage src={imageSrc} />"
@@ -148,13 +148,13 @@ Ext.define("Project.view.home.mainView", {
 						html : "<div class = carouselTitle><b>英山茶叶</b></div>",
 						data : [{
 								name : "茶叶市场",
-								imageSrc : "resources/icons/01.png",
+								imageSrc : "resources/icons/16.png",
 							}, {
 								name : "茶技推广",
-								imageSrc : "resources/icons/05.png",
+								imageSrc : "resources/icons/17.png",
 							}, {
 								name : "专家在线",
-								imageSrc : "resources/icons/04.png",
+								imageSrc : "resources/icons/18.png",
 							},
 						],
 						itemTpl : "<img class = carouselListImage src={imageSrc} />"
