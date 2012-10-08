@@ -15,6 +15,12 @@
 		<script type = "text/javascript" src = "lib/sencha-touch-all.js" ></script>
 		<link rel = "stylesheet" type = "text/css" href = "lib/sencha-touch.css" >
 
+		<!-- Android 4.0.x Hack -->
+		<script type="text/javascript">
+			Ext.Loader.setConfig({ disableCaching: false });
+			Ext.Ajax.setDisableCaching(false);
+		</script>
+		
 		<!-- Global Variable -->
 		<script type = "text/javascript" src = "module/globalVariable.js" ></script>
 

@@ -15,4 +15,5 @@ var DB = {
 };
 
 // 页面指示
-var infoPageNum = 1;
+var currInfoPageNum = 1;
+var lastInfoPageNum = 1;

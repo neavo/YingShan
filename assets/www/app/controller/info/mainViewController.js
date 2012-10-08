@@ -42,14 +42,17 @@ Ext.define("Project.controller.info.mainViewController", {
 	reloadStore : function (callback) {
 		DB.activatedStore.setProxy({
 			type : "jsonp",
-			url : Website.serverUrl + Website.infoScriptUrl + DB.activatedCategory + "&infoPageNum=" + infoPageNum,
+			url : Website.serverUrl + Website.infoScriptUrl + DB.activatedCategory + "&infoPageNum=" + currInfoPageNum,
 		});
 		if (callback) {
 			DB.activatedStore.load({
 				callback : function (records, operation, success, eOpts) {
-					if (records.length == 0 && infoPageNum > 2) {
-						infoPageNum = infoPageNum - 1;
-						DB.activatedStore.load();
+					if (records.length == 0) {
+						currInfoPageNum = lastInfoPageNum + 1;	
+					}
+					else
+					{
+						lastInfoPageNum = currInfoPageNum;
 					}
 				}
 			});
@@ -59,10 +62,10 @@ Ext.define("Project.controller.info.mainViewController", {
 	},
 	// 上一页
 	onPrevPageBtnAtInfoMainViewTap : function () {
-		if (infoPageNum == 1) {
+		if (currInfoPageNum == 1) {
 			Ext.Msg.alert("掌上 • 英山 v1.0.0", "已是第一页！");
 		} else {
-			infoPageNum = infoPageNum - 1;
+			currInfoPageNum = currInfoPageNum - 1;
 			this.reloadStore();
 		}
 	},
@@ -72,7 +75,7 @@ Ext.define("Project.controller.info.mainViewController", {
 	},
 	// 下一页
 	onNextPageBtnAtInfoMainViewTap : function () {
-		infoPageNum = infoPageNum + 1;
+		currInfoPageNum = currInfoPageNum + 1;
 		this.reloadStore(true);
 	},
 	// 点击列表条目

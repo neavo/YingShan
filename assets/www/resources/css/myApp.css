@@ -85,25 +85,36 @@
 /*
 	导航栏侧边栏样式
 */
-.carouselTitle
-{
-	font-size : 1em;
+.carouselTitle {
+	font-size : 1.2em;
    	text-align : center;
-	color : #4B4B4B;
+	color : #000000;
 	padding-top : 0.5em;
-	padding-bottom : 0.2em;
-	margin-bottom : -0.5em;
+	padding-bottom : 0em;	
 }
 
 /*
 	广告栏样式
 */
-.adImage
-{
-	height : auto;
+.adCarousel {
+	margin-left : 2%;
+	margin-right : 2%;
+	margin-top : 2%;
+	margin-bottom : 2%;
+	border-radius : 0.3em;
+	border-style : double;
+	border-width : 0.3em;
+	border-color : #FFFFFF;
+}
+.adCarousel .x-carousel-indicator-dark span {
+  background-image: none;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.adCarousel .x-carousel-indicator-dark span.x-carousel-indicator-active {
+  background-image: none;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.adImage {
+	height : 100%;
 	width : 100%;
-	padding-left : 1em;
-	padding-right : 1em;
-	padding-top : 0.5em;
-	padding-bottom : 0.5em;
 }
