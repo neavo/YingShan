@@ -9,6 +9,7 @@ Ext.define("Project.view.home.mainView", {
 				title : "掌上 • 英山",
 				docked : "top",
 			},{
+				id : "adCarousel",
 				xtype : "carousel",
 				flex : 2.3,
 				cls : "adCarousel",
@@ -26,7 +27,15 @@ Ext.define("Project.view.home.mainView", {
 						cls : "adImage",
 					},{
 						xtype : "image",
-						src : "resources/images/ad_04.jpg",
+						src : "resources/images/ad_02.jpg",
+						cls : "adImage",
+					}, {
+						xtype : "image",
+						src : "resources/images/ad_01.jpg",
+						cls : "adImage",
+					}, {
+						xtype : "image",
+						src : "resources/images/ad_03.jpg",
 						cls : "adImage",
 					},
 				],
