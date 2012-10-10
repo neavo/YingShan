@@ -14,6 +14,7 @@ Ext.define("Project.view.info.mainView", {
 				id : "mainListAtInfoMainView",
 				xtype : "list",
 				cls : "infoList",
+				store : "mainStore",
 				emptyText : "无更多记录",
 				loadingText : "读取中 ...",
 				itemTpl :

@@ -11,7 +11,6 @@ var Website = {
 var DB = {
 	activatedController : "", // 正在激活的页面的控制器
 	activatedCategory : "", // 正在激活的页面的频道ID
-	activatedStore : "", // 正在激活的页面对应的Store
 };
 
 // 页面指示

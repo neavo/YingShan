@@ -1,4 +1,4 @@
-Ext.define("Project.model.mainModel_416", {
+Ext.define("Project.model.mainModel", {
 	extend : "Ext.data.Model",
 	config : {
 		fields : [{
