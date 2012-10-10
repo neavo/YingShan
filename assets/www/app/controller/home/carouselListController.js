@@ -44,19 +44,15 @@ Ext.define("Project.controller.home.carouselListController", {
 		this.topBar = this.getTopBarAtInfoMainView();
 		this.mainList = this.getMainListAtInfoMainView();
 	},
-	// 翻页时重载数据
-	switchStore : function () {
+	setActivatedView : function (id, title) {
+		setActivatedController(this.getApplication().getController("info.mainViewController"));
+		setActivatedCategory(id);
+		this.topBar.setTitle(title);
 		this.mainList.getStore().setProxy({
 			type : "jsonp",
 			url : Website.serverUrl + Website.infoScriptUrl + DB.activatedCategory + "&infoPageNum=1",
 		});
 		this.mainList.getStore().load();
-	},
-	setActivatedView : function (id, title) {
-		setActivatedController(this.getApplication().getController("info.mainViewController"));
-		setActivatedCategory(id);
-		this.topBar.setTitle(title);
-		this.switchStore();
 		this.mainContainer.setActiveItem(this.mainView);
 	},
 	onCarouselList_01_ItemTap : function (list, index, e, eOpts) {
