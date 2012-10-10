@@ -70,7 +70,7 @@ Ext.define("Project.view.home.mainView", {
 						scrollable : false,
 						ui : "round",
 						onItemDisclosure : true,
-						html : "<div class = carouselTitle><b>英山旅游</b></div>",
+						html : "<div class = carouselTitle><b>英　山　旅　游</b></div>",
 						data : [{
 								name : "景区介绍",
 								imageSrc : "resources/icons/04.png",
@@ -91,7 +91,7 @@ Ext.define("Project.view.home.mainView", {
 						scrollable : false,
 						ui : "round",
 						onItemDisclosure : true,
-						html : "<div class = carouselTitle><b>开放英山</b></div>",
+						html : "<div class = carouselTitle><b>开　放　英　山</b></div>",
 						data : [{
 								name : "招商指南",
 								imageSrc : "resources/icons/07.png",
@@ -112,7 +112,7 @@ Ext.define("Project.view.home.mainView", {
 						scrollable : false,
 						ui : "round",
 						onItemDisclosure : true,
-						html : "<div class = carouselTitle><b>科技英山</b></div>",
+						html : "<div class = carouselTitle><b>科　技　英　山</b></div>",
 						data : [{
 								name : "创新科技",
 								imageSrc : "resources/icons/10.png",
@@ -133,7 +133,7 @@ Ext.define("Project.view.home.mainView", {
 						scrollable : false,
 						ui : "round",
 						onItemDisclosure : true,
-						html : "<div class = carouselTitle><b>健康英山</b></div>",
+						html : "<div class = carouselTitle><b>健　康　英　山</b></div>",
 						data : [{
 								name : "健康教育",
 								imageSrc : "resources/icons/13.png",
@@ -154,7 +154,7 @@ Ext.define("Project.view.home.mainView", {
 						scrollable : false,
 						ui : "round",
 						onItemDisclosure : true,
-						html : "<div class = carouselTitle><b>英山茶叶</b></div>",
+						html : "<div class = carouselTitle><b>英　山　茶　叶</b></div>",
 						data : [{
 								name : "茶叶市场",
 								imageSrc : "resources/icons/16.png",
