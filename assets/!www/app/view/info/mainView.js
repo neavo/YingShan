@@ -3,15 +3,16 @@ Ext.define("Project.view.info.mainView", {
 	xtype : "infoMainView",
 	config : {
 		layout : "vbox",
+		defaults : {
+			flex : 1,
+		},
 		items : [{
 				id : "topBarAtInfoMainView",
 				xtype : "toolbar",
-				flex : 1,
 				docked : "top",
 			}, {
 				id : "mainListAtInfoMainView",
 				xtype : "list",
-				flex : 1,
 				cls : "infoList",
 				store : "mainStore",
 				emptyText : "无更多记录",
@@ -23,7 +24,6 @@ Ext.define("Project.view.info.mainView", {
 				+ "<div class = infoListPubliser>{publisher}</div>",
 			}, {
 				xtype : "toolbar",
-				flex : 1,
 				docked : "bottom",
 				items : [{
 						id : "prevPageBtnAtInfoMainView",

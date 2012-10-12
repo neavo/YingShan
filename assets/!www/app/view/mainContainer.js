@@ -5,11 +5,10 @@ Ext.define("Project.view.mainContainer", {
 	config : {
 		layout : {
 			type : "card",
+			animation : "pop",
 		},
 		items : [{
 				xtype : "homeView",
-			}, {
-				xtype : "childCategoryView",
 			}, {
 				xtype : "infoMainView",
 			},{

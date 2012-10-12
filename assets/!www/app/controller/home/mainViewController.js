@@ -4,7 +4,6 @@ Ext.define("Project.controller.home.mainViewController", {
 	config : {
 		refs : {
 			adCarousel : "#adCarousel",
-			weatherCarousel : "#weatherCarousel",
 			updateBtnAtHomeView : "#updateBtnAtHomeView",
 			backBtnAtHomeView : "#backBtnAtHomeView",
 			aboutBtnAtAgriNewsView : "#aboutBtnAtAgriNewsView",
@@ -24,16 +23,14 @@ Ext.define("Project.controller.home.mainViewController", {
 	launch : function () {
 		var t = 0;
 		var adCarousel = this.getAdCarousel();
-		var weatherCarousel = this.getWeatherCarousel();
 		setActivatedController(this);
 		setInterval(function () {
-			if (t == 2) {
+			if (t == 5) {
 				t = 0;
 			} else {
 				t = t + 1;
 			}	
 		adCarousel.setActiveItem(t);
-		weatherCarousel.setActiveItem(t);
 		}, 5000);
 	},
 	goBack : function () {

@@ -40,12 +40,12 @@ Ext.define("Project.controller.info.mainViewController", {
 	},
 	// 翻页时重载数据
 	reloadStore : function (callback) {
-		Ext.getStore("mainStore").setProxy({
+		DB.activatedStore.setProxy({
 			type : "jsonp",
 			url : Website.serverUrl + Website.infoScriptUrl + DB.activatedCategory + "&infoPageNum=" + currInfoPageNum,
 		});
 		if (callback) {
-			Ext.getStore("mainStore").load({
+			DB.activatedStore.load({
 				callback : function (records, operation, success, eOpts) {
 					if (records.length == 0) {
 						currInfoPageNum = lastInfoPageNum + 1;	
@@ -57,7 +57,7 @@ Ext.define("Project.controller.info.mainViewController", {
 				}
 			});
 		} else {
-			Ext.getStore("mainStore").load();
+			DB.activatedStore.load();
 		}
 	},
 	// 上一页

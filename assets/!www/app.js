@@ -18,7 +18,6 @@ Ext.application({
 	
 	views : [
 		"mainContainer",
-		"childCategoryView",
 		"home.mainView",
 		"info.mainView",
 		"info.detailView",
@@ -26,15 +25,13 @@ Ext.application({
 	
 	controllers : [
 		"home.mainViewController",
-		"home.categoryContainerController",
-		"childCategoryController",
+		"home.carouselListController",
 		"info.mainViewController",
 		"info.detailViewController",
 	],
 
 	launch : function () {
 		Ext.Viewport.add(Ext.create("Project.view.mainContainer"));
-		//Ext.Viewport.add(Ext.create("Project.view.childCategoryView"));
 	},
 });
 
