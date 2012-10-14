@@ -2,6 +2,7 @@ Ext.define("Project.controller.childCategoryController", {
 	extend : "Ext.app.Controller",
 	config : {
 		refs : {
+			homeView : "homeView",
 			mainContainer : "mainContainer",
 			infoMainView : "infoMainView",
 			childCategoryView : "childCategoryView",
@@ -19,6 +20,7 @@ Ext.define("Project.controller.childCategoryController", {
 		},
 	},
 	launch : function () {
+		this.homeView = this.getHomeView();
 		this.mainContainer = this.getMainContainer();
 		this.childCategoryView = this.getChildCategoryView();
 		this.infoMainView = this.getInfoMainView();
@@ -28,8 +30,14 @@ Ext.define("Project.controller.childCategoryController", {
 		this.topBar = this.getTopBarAtInfoMainView();
 		this.mainList = this.getMainListAtInfoMainView();
 	},
-	goBack : function () {},
+	goBack : function () {
+		setActivatedController(this.getApplication().getController("home.mainViewController"));
+		this.mainContainer.setActiveItem(this.homeView);
+	},
 	setChildView : function (childCategory, title) {
+		Ext.Anim.run(this.childCategoryView, "slide", {
+			out : false,
+		});
 		this.childCategoryTitle.setTitle(title);
 		this.childCategoryList.getStore().setData(childCategory);
 	},

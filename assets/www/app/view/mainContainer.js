@@ -5,6 +5,7 @@ Ext.define("Project.view.mainContainer", {
 	config : {
 		layout : {
 			type : "card",
+			animation : "slide",
 		},
 		items : [{
 				xtype : "homeView",

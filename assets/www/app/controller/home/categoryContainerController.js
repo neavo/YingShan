@@ -73,7 +73,7 @@ Ext.define("Project.controller.home.categoryContainerController", {
 						parent.mainContainer.setActiveItem(parent.infoMainView);
 					},
 					setChildView : function (parent, childCategory, title) {
-						//setActivatedController(parent.getApplication().getController("info.mainViewController"));
+						setActivatedController(parent.getApplication().getController("childCategoryController"));
 						parent.childCategoryTitle.setTitle(title);
 						if (!parent.childCategoryList.getStore()) {
 							parent.childCategoryList.setData(childCategory);
