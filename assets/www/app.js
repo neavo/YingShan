@@ -18,8 +18,8 @@ Ext.application({
 	
 	views : [
 		"mainContainer",
+		"homeView",
 		"childCategoryView",
-		"home.mainView",
 		"info.mainView",
 		"info.detailView",
 	],
@@ -34,7 +34,5 @@ Ext.application({
 
 	launch : function () {
 		Ext.Viewport.add(Ext.create("Project.view.mainContainer"));
-		//Ext.Viewport.add(Ext.create("Project.view.childCategoryView"));
 	},
 });
-

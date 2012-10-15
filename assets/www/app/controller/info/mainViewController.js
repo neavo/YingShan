@@ -5,6 +5,7 @@ Ext.define("Project.controller.info.mainViewController", {
 			homeView : "homeView",
 			mainContainer : "mainContainer",
 			infoDetailView : "infoDetailView",
+			childCategoryView : "childCategoryView",
 			
 			prevPageBtnAtInfoMainView : "#prevPageBtnAtInfoMainView",
 			backBtnAtInfoMainView : "#backBtnAtInfoMainView",
@@ -31,12 +32,13 @@ Ext.define("Project.controller.info.mainViewController", {
 	launch : function () {
 		this.homeView = this.getHomeView();
 		this.mainContainer = this.getMainContainer();
+		this.childCategoryView = this.getChildCategoryView();
 		this.infoDetailView = this.getInfoDetailView();
 	},
 	// 响应返回键
 	goBack : function () {
-		setActivatedController(this.getApplication().getController("home.mainViewController"));
-		this.mainContainer.setActiveItem(this.homeView);
+		setActivatedController(this.getApplication().getController("childCategoryController"));
+		this.mainContainer.setActiveItem(this.childCategoryView);
 	},
 	// 翻页时重载数据
 	reloadStore : function (callback) {

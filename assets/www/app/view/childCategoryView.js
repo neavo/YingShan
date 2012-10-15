@@ -6,13 +6,13 @@ Ext.define("Project.view.childCategoryView", {
 		items : [{
 				id : "childCategoryTitle",
 				xtype : "toolbar",
-				flex : 1,
+				height : DB.screenHeight * 0.08,
 				docked : "top",
 			}, {
 				id : "childCategoryList",
 				xtype : "list",
 				cls : "childCategoryList",
-				flex : 1,
+				height : DB.screenHeight * 0.92,
 				ui : "round",
 				onItemDisclosure : true,
 				emptyText : "无更多记录",

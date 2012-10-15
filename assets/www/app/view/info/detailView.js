@@ -7,10 +7,12 @@ Ext.define("Project.view.info.detailView", {
 		cls : "detail",
 		items : [{
 				xtype : "toolbar",
+				height : DB.screenHeight * 0.08,
 				docked : "top",
 				title : "详细信息"
 			}, {
 				xtype : "toolbar",
+				height : DB.screenHeight * 0.08,
 				docked : "bottom",
 				items : [{
 						xtype : "spacer"
