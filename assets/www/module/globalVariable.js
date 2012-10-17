@@ -11,6 +11,12 @@ var Website = {
 var DB = {
 	activatedController : "", // 正在激活的页面的控制器
 	activatedCategory : "", // 正在激活的页面的频道ID
+	weather : {
+		icon : "08",		// 默认为晴天
+		text : "晴朗",			// 晴天
+		low : "10",
+		high : "20",
+	},
 	screenHeight : 0,		// 屏幕高度
 	screenWidth : 0,			// 屏幕宽度
 };

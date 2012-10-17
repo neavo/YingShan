@@ -4,19 +4,15 @@ Ext.define("Project.controller.home.mainViewController", {
 	config : {
 		refs : {
 			adCarousel : "#adCarousel",
-			updateBtnAtHomeView : "#updateBtnAtHomeView",
-			backBtnAtHomeView : "#backBtnAtHomeView",
-			aboutBtnAtAgriNewsView : "#aboutBtnAtAgriNewsView",
+			updateBtn : "#updateBtn",
+			aboutBtn : "#aboutBtn",
 		},
 		control : {
-			updateBtnAtHomeView : {
-				tap : "onUpdateBtnAtHomeViewTap",
+			updateBtn : {
+				tap : "onUpdateBtnTap",
 			},
-			backBtnAtHomeView : {
-				tap : "onBackBtnAtHomeViewTap",
-			},
-			aboutBtnAtAgriNewsView : {
-				tap : "onAboutBtnAtAgriNewsViewTap",
+			aboutBtn : {
+				tap : "onAboutBtnTap",
 			},
 		},
 	},
@@ -34,19 +30,16 @@ Ext.define("Project.controller.home.mainViewController", {
 		}, 5000);
 	},
 	goBack : function () {
-		Ext.Msg.confirm("掌上 • 英山 v2.0.0", "确定退出“掌上 • 英山”？", function (buttonId, value, opt) {
+		Ext.Msg.confirm("掌上 • 英山 v2.0.1", "确定退出“掌上 • 英山”？", function (buttonId, value, opt) {
 			if (buttonId == "yes") {
 				navigator.app.exitApp();
 			}
 		});
 	},
-	onUpdateBtnAtHomeViewTap : function () {
-		Ext.Msg.alert("掌上 • 英山 v2.0.0", "当前已是最新版本！");
+	onUpdateBtnTap : function () {
+		Ext.Msg.alert("掌上 • 英山 v2.0.1", "当前已是最新版本！");
 	},
-	onBackBtnAtHomeViewTap : function () {
-		this.goBack();
-	},
-	onAboutBtnAtAgriNewsViewTap : function () {
-		Ext.Msg.alert("掌上 • 英山 v2.0.0", "版权信息：&nbsp黄冈市英山县政府&nbsp<br>协办单位：&nbsp中国电信英山分公司&nbsp&nbsp<br>技术支持：武汉理工大学计算机学院");
+	onAboutBtnTap : function () {
+		Ext.Msg.alert("掌上 • 英山 v2.0.1", "版权信息：&nbsp黄冈市英山县政府&nbsp<br>协办单位：&nbsp中国电信英山分公司&nbsp&nbsp<br>技术支持：武汉理工大学计算机学院");
 	},
 });

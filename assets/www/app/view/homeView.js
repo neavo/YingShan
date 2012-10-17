@@ -10,19 +10,17 @@ Ext.define("Project.view.homeView", {
 				title : "掌上 • 英山",
 				docked : "top",
 			}, {
-				id : "weatherContainer",
 				xtype : "container",
-				height : DB.screenHeight * 0.15,
 				cls : "weatherContainer",
-				style : "background : url(resources/images/weatherBackground.png); background-repeat : repeat-x;",
-				html : "<img class = weatherImage src = resources/images/weather.png />"
-				+ "<div class = weatherTextLine_01><b>晴转多云&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp东南风<b></div>"
-				+ "<div class = weatherTextLine_02><b>今日气温：&nbsp&nbsp10℃ ~ 22℃</b></div>",
+				height : DB.screenHeight * 0.12,
+				style : "background : url(resources/weather/weatherBackground.png); background-repeat : repeat-x;",
+				html : "<img class = weatherImage src = " + "resources/weather/" + DB.weather.icon + ".png >"
+				+ "<div class = weatherTextLine><b>" + DB.weather.text + "　" + DB.weather.low + "℃ ~ " + DB.weather.high + "℃" + "<b></div>",
 			}, {
 				id : "adCarousel",
 				xtype : "carousel",
-				height : DB.screenHeight * 0.27,
 				cls : "adCarousel",
+				height : DB.screenHeight * 0.3,
 				items : [{
 						xtype : "image",
 						src : "resources/images/ad_01.jpg",
@@ -41,8 +39,39 @@ Ext.define("Project.view.homeView", {
 				id : "categoryContainer",
 				xtype : "container",
 				cls : "categoryContainer",
-				height : DB.screenHeight * 0.5,
+				height : DB.screenHeight * 0.42,
 				layout : "vbox",
+			}, {
+				xtype : "toolbar",
+				height : DB.screenHeight * 0.08,
+				docked : "bottom",
+				items : [{
+						xtype : "spacer",
+					}, {
+						id : "updateBtn",
+						xtype : "button",
+						ui : "plain",
+						iconCls : "download",
+						iconMask : true,
+					}, {
+						xtype : "spacer",
+					}, {
+						xtype : "button",
+						ui : "plain",
+						iconCls : "search",
+						iconMask : true,
+					}, {
+						xtype : "spacer",
+					}, {
+						id : "aboutBtn",
+						xtype : "button",
+						ui : "plain",
+						iconCls : "more", 
+						iconMask:true,
+					}, {
+						xtype : "spacer",
+					},
+				],
 			},
 		],
 	},

@@ -61,6 +61,7 @@ Ext.define("Project.controller.home.categoryContainerController", {
 					isParentCategory : Category[key]["isParentCategory"],
 					isUploadCategory : Category[key]["isUploadCategory"],
 					childCategory : Category[key]["childCategory"],
+					// 无子频道
 					setActivatedView : function (parent, id, title) {
 						setActivatedController(parent.getApplication().getController("info.mainViewController"));
 						setActivatedCategory(id);
@@ -72,6 +73,7 @@ Ext.define("Project.controller.home.categoryContainerController", {
 						parent.mainList.getStore().load();
 						parent.mainContainer.setActiveItem(parent.infoMainView);
 					},
+					// 有子频道
 					setChildView : function (parent, childCategory, title) {
 						setActivatedController(parent.getApplication().getController("childCategoryController"));
 						parent.childCategoryTitle.setTitle(title);
