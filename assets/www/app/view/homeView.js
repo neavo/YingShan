@@ -22,17 +22,17 @@ Ext.define("Project.view.homeView", {
 				cls : "adCarousel",
 				height : DB.screenHeight * 0.3,
 				items : [{
-						xtype : "image",
-						src : "resources/images/ad_01.jpg",
-						cls : "adImage",
-					}, {
-						xtype : "image",
-						src : "resources/images/ad_02.jpg",
-						cls : "adImage",
-					}, {
-						xtype : "image",
-						src : "resources/images/ad_03.jpg",
-						cls : "adImage",
+						xtype : "container",
+						html : "<img class = adImage src = resources/images/ad_01.jpg >"
+					},{
+						xtype : "container",
+						html : "<img class = adImage src = resources/images/ad_02.jpg >"
+					},{
+						xtype : "container",
+						html : "<img class = adImage src = resources/images/ad_03.jpg >"
+					},{
+						xtype : "container",
+						html : "<img class = adImage src = resources/images/ad_04.jpg >"
 					},
 				],
 			}, {

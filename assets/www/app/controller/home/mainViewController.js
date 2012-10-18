@@ -21,7 +21,7 @@ Ext.define("Project.controller.home.mainViewController", {
 		var adCarousel = this.getAdCarousel();
 		setActivatedController(this);
 		setInterval(function () {
-			if (t == 2) {
+			if (t == 3) {
 				t = 0;
 			} else {
 				t = t + 1;
