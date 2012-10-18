@@ -50,10 +50,8 @@ Ext.define("Project.controller.info.mainViewController", {
 			Ext.getStore("mainStore").load({
 				callback : function (records, operation, success, eOpts) {
 					if (records.length == 0) {
-						currInfoPageNum = lastInfoPageNum + 1;	
-					}
-					else
-					{
+						currInfoPageNum = lastInfoPageNum + 1;
+					} else {
 						lastInfoPageNum = currInfoPageNum;
 					}
 				}
@@ -65,7 +63,7 @@ Ext.define("Project.controller.info.mainViewController", {
 	// 上一页
 	onPrevPageBtnAtInfoMainViewTap : function () {
 		if (currInfoPageNum == 1) {
-			Ext.Msg.alert("掌上 • 英山 v1.0.0", "已是第一页！");
+			Ext.Msg.alert("掌上 • 英山 v2.0.1", "已是第一页！");
 		} else {
 			currInfoPageNum = currInfoPageNum - 1;
 			this.reloadStore();
@@ -82,12 +80,24 @@ Ext.define("Project.controller.info.mainViewController", {
 	},
 	// 点击列表条目
 	onMainListAtInfoMainViewItemTap : function (list, index, e, eOpts) {
-		this.infoDetailView.setHtml(
-			"<div class = infoDetailTitle><b>" + list.getStore().getAt(index).get("title") + "</b></div>"
-			 + "<div class = infoDetailDataTime>" + list.getStore().getAt(index).get("datetime") + "</div>"
-			 + "<div class = infoDetailDataTime>" + "来源：" + list.getStore().getAt(index).get("publisher") + "</div>"
-			 + "<hr width = 100% size = 2 color = #000000 align = center noshade>"
-			 + "<div class = infoDetailContent>" + list.getStore().getAt(index).get("content") + "</div>");
+		console.log(list.getStore().getAt(index).get("videourl"));
+		if (list.getStore().getAt(index).get("videourl") != "" && list.getStore().getAt(index).get("videourl").toLowerCase() != "null") {
+			DB.videoUrl = list.getStore().getAt(index).get("videourl");
+			this.infoDetailView.setHtml(
+				"<div class = infoDetailTitle><b>" + list.getStore().getAt(index).get("title") + "</b></div>"
+				 + "<div class = infoDetailDataTime>" + list.getStore().getAt(index).get("datetime") + "</div>"
+				 + "<div class = infoDetailDataTime>" + "来源：" + list.getStore().getAt(index).get("publisher") + "</div>"
+				 + "<hr width = 100% size = 2 color = #000000 align = center noshade>"
+				 + "<center><input class= \"palyVideo\"  type =\"button\" onclick=\"playVideo();\" /></center>"
+				 + "<div class = infoDetailContent>" + list.getStore().getAt(index).get("content") + "</div>");
+		} else {
+			this.infoDetailView.setHtml(
+				"<div class = infoDetailTitle><b>" + list.getStore().getAt(index).get("title") + "</b></div>"
+				 + "<div class = infoDetailDataTime>" + list.getStore().getAt(index).get("datetime") + "</div>"
+				 + "<div class = infoDetailDataTime>" + "来源：" + list.getStore().getAt(index).get("publisher") + "</div>"
+				 + "<hr width = 100% size = 2 color = #000000 align = center noshade>"
+				 + "<div class = infoDetailContent>" + list.getStore().getAt(index).get("content") + "</div>");
+		};
 		setActivatedController(this.getApplication().getController("info.detailViewController"));
 		this.mainContainer.setActiveItem(this.infoDetailView);
 	},

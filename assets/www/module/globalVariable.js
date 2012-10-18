@@ -19,6 +19,7 @@ var DB = {
 	},
 	screenHeight : 0,		// 屏幕高度
 	screenWidth : 0,			// 屏幕宽度
+	videoUrl : "",
 };
 
 // 页面指示
@@ -28,7 +29,7 @@ var lastInfoPageNum = 1;
 // 频道列表
 var Category = [{
 		categoryId : "",
-		categoryTitle : "英山新闻",
+		categoryTitle : "新闻",
 		categoryIconUrl : "resources/icons/01.png",
 		isParentCategory : true,
 		isUploadCategory : false,
@@ -122,7 +123,7 @@ var Category = [{
 		],
 	}, {
 		categoryId : "",
-		categoryTitle : "英山政务",
+		categoryTitle : "政务",
 		categoryIconUrl : "resources/icons/02.png",
 		isParentCategory : true,
 		isUploadCategory : false,
@@ -309,7 +310,7 @@ var Category = [{
 		],
 	}, {
 		categoryId : "",
-		categoryTitle : "英山茶叶",
+		categoryTitle : "茶叶",
 		categoryIconUrl : "resources/icons/03.png",
 		isParentCategory : true,
 		isUploadCategory : false,
@@ -345,7 +346,7 @@ var Category = [{
 			],
 	}, {
 		categoryId : "",
-		categoryTitle : "英山旅游",
+		categoryTitle : "旅游",
 		categoryIconUrl : "resources/icons/04.png",
 		isParentCategory : true,
 		isUploadCategory : false,
@@ -410,7 +411,7 @@ var Category = [{
 		],
 	}, {
 		categoryId : "",
-		categoryTitle : "英山招商",
+		categoryTitle : "招商",
 		categoryIconUrl : "resources/icons/05.png",
 		isParentCategory : true,
 		isUploadCategory : false,
@@ -446,7 +447,7 @@ var Category = [{
 		],
 	}, {
 		categoryId : "",
-		categoryTitle : "英山科技",
+		categoryTitle : "科技",
 		categoryIconUrl : "resources/icons/06.png",
 		isParentCategory : true,
 		isUploadCategory : false,
@@ -489,7 +490,7 @@ var Category = [{
 		],
 	}, {
 		categoryId : "",
-		categoryTitle : "英山医疗",
+		categoryTitle : "医疗",
 		categoryIconUrl : "resources/icons/07.png",
 		isParentCategory : true,
 		isUploadCategory : false,
@@ -532,7 +533,7 @@ var Category = [{
 		],
 	}, {
 		categoryId : "",
-		categoryTitle : "英山生活",
+		categoryTitle : "生活",
 		categoryIconUrl : "resources/icons/08.png",
 		isParentCategory : true,
 		isUploadCategory : false,

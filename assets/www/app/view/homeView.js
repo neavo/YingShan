@@ -4,23 +4,24 @@ Ext.define("Project.view.homeView", {
 	config : {
 		layout : "vbox",
 		style : "background : url(resources/images/mainBackground.png); background-repeat : repeat-y;",
-		items : [{
+		items : [/*{
 				xtype : "toolbar",
 				height : DB.screenHeight * 0.08,
 				title : "掌上 • 英山",
 				docked : "top",
-			}, {
+			}, */{
+				id : "weatherContainer",
 				xtype : "container",
 				cls : "weatherContainer",
 				height : DB.screenHeight * 0.12,
 				style : "background : url(resources/weather/weatherBackground.png); background-repeat : repeat-x;",
 				html : "<img class = weatherImage src = " + "resources/weather/" + DB.weather.icon + ".png >"
-				+ "<div class = weatherTextLine><b>" + DB.weather.text + "　" + DB.weather.low + "℃ ~ " + DB.weather.high + "℃" + "<b></div>",
+				+ "<div class = weatherTextLine><b></b>载入天气中 ... </div>" 
 			}, {
 				id : "adCarousel",
 				xtype : "carousel",
 				cls : "adCarousel",
-				height : DB.screenHeight * 0.3,
+				height : DB.screenHeight * 0.38,
 				items : [{
 						xtype : "container",
 						html : "<img class = adImage src = resources/images/ad_01.jpg >"
@@ -67,7 +68,15 @@ Ext.define("Project.view.homeView", {
 						xtype : "button",
 						ui : "plain",
 						iconCls : "more", 
-						iconMask:true,
+						iconMask : true,
+					}, {
+						xtype : "spacer",
+					}, {
+						id : "backBtn",
+						xtype : "button",
+						ui : "plain",
+						iconCls : "reply", 
+						iconMask : true,
 					}, {
 						xtype : "spacer",
 					},

@@ -10,14 +10,8 @@ public class MainActivity extends DroidGap {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        // 启动程序时的闪屏信息
-        /*super.init();
-        super.appView.clearCache(true);
-        this.appView.setBackgroundColor(0);
-        this.appView.setBackgroundResource(R.drawable.splashscreen);*/
-        
         super.setIntegerProperty("splashscreen", R.drawable.splashscreen);      
-        super.loadUrl("file:///android_asset/www/index.html", 5000);
+        super.loadUrl("file:///android_asset/www/index.html", 10000);
     }
 
     @Override

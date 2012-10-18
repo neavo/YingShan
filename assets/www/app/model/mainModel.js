@@ -17,6 +17,9 @@ Ext.define("Project.model.mainModel", {
 				name : "publisher",
 				type : "string",
 			}, {
+				name : "videourl",
+				type : "string",
+			}, {
 				name : "imageurl1",
 				type : "string",
 			}, {
