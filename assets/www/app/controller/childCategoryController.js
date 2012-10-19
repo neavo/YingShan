@@ -31,7 +31,7 @@ Ext.define("Project.controller.childCategoryController", {
 		this.mainList = this.getMainListAtInfoMainView();
 	},
 	goBack : function () {
-		setActivatedController(this.getApplication().getController("home.mainViewController"));
+		setActivatedController(this.getApplication().getController("homeViewController"));
 		this.mainContainer.setActiveItem(this.homeView);
 	},
 	setChildView : function (childCategory, title) {
@@ -42,7 +42,7 @@ Ext.define("Project.controller.childCategoryController", {
 		this.childCategoryList.getStore().setData(childCategory);
 	},
 	setActivatedView : function (id, title) {
-		setActivatedController(this.getApplication().getController("info.mainViewController"));
+		setActivatedController(this.getApplication().getController("infoListView"));
 		setActivatedCategory(id);
 		this.topBar.setTitle(title);
 		this.mainList.getStore().setProxy({

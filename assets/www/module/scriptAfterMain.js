@@ -61,5 +61,5 @@
 		Ext.getCmp("weatherContainer").setHtml(
 		"<img class = weatherImage src = " + "resources/weather/" + DB.weather.icon + ".png >"
 		+ "<div class = weatherTextLine><b>" + DB.weather.text + "　" + DB.weather.low + "℃ ~ " + DB.weather.high + "℃" + "<b></div>");
-	}, 10000);
+	}, 20000);
 };

@@ -1,6 +1,18 @@
 /*
+	主页样式
+*/
+.homeView {
+	background : url(../images/mainBackground.png);
+	background-repeat : repeat-y;
+}
+
+/*
 	天气样式
 */
+.weatherContainer {
+	background : url(../weather/weatherBackground.png);
+	background-repeat : repeat-x;
+}
 .weatherImage {
 	padding-top : 4%;
 	padding-left : 3%;
@@ -144,6 +156,7 @@
 */
 .palyVideo {
 	text-align : center;
-	width : 60px;
-	height : 60px;
+	width : 64px;
+	height : 64px;
+	background : url(../images/videoimg.png);
 }

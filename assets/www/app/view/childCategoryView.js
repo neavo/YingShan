@@ -12,14 +12,16 @@ Ext.define("Project.view.childCategoryView", {
 				id : "childCategoryList",
 				xtype : "list",
 				cls : "childCategoryList",
-				height : DB.screenHeight * 0.92,
-				ui : "round",
+				height : DB.screenHeight * 0.84,
 				onItemDisclosure : true,
 				emptyText : "无更多记录",
 				loadingText : "读取中 ...",
 				itemTpl :
 				"<img class = childCategoryIcon src = {categoryIconUrl} />"
-				+ "<div class = childCategoryTitle><b>{categoryTitle} </b></div>",
+				 + "<div class = childCategoryTitle><b>{categoryTitle} </b></div>",
+			}, {
+				xtype : "bottomToolbar",
+				height : DB.screenHeight * 0.08,
 			},
 		],
 	},

@@ -55,7 +55,7 @@ var Category = [{
 						childCategory : [],
 					}, {
 						categoryId : "402",
-						categoryTitle : "财政新闻",
+						categoryTitle : "财经新闻",
 						categoryIconUrl : "resources/icons/01.png",
 						isParentCategory : false,
 						isUploadCategory : false,

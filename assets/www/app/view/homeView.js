@@ -3,20 +3,14 @@ Ext.define("Project.view.homeView", {
 	xtype : "homeView",
 	config : {
 		layout : "vbox",
-		style : "background : url(resources/images/mainBackground.png); background-repeat : repeat-y;",
-		items : [/*{
-				xtype : "toolbar",
-				height : DB.screenHeight * 0.08,
-				title : "掌上 • 英山",
-				docked : "top",
-			}, */{
+		cls : "homeView",
+		items : [{
 				id : "weatherContainer",
 				xtype : "container",
 				cls : "weatherContainer",
 				height : DB.screenHeight * 0.12,
-				style : "background : url(resources/weather/weatherBackground.png); background-repeat : repeat-x;",
 				html : "<img class = weatherImage src = " + "resources/weather/" + DB.weather.icon + ".png >"
-				+ "<div class = weatherTextLine><b></b>载入天气中 ... </div>" 
+				 + "<div class = weatherTextLine><b></b>载入天气中 ... </div>"
 			}, {
 				id : "adCarousel",
 				xtype : "carousel",
@@ -25,62 +19,23 @@ Ext.define("Project.view.homeView", {
 				items : [{
 						xtype : "container",
 						html : "<img class = adImage src = resources/images/ad_01.jpg >"
-					},{
+					}, {
 						xtype : "container",
 						html : "<img class = adImage src = resources/images/ad_02.jpg >"
-					},{
+					}, {
 						xtype : "container",
 						html : "<img class = adImage src = resources/images/ad_03.jpg >"
-					},{
+					}, {
 						xtype : "container",
 						html : "<img class = adImage src = resources/images/ad_04.jpg >"
 					},
 				],
 			}, {
-				id : "categoryContainer",
-				xtype : "container",
-				cls : "categoryContainer",
+				xtype : "categoryContainer",
 				height : DB.screenHeight * 0.42,
-				layout : "vbox",
 			}, {
-				xtype : "toolbar",
+				xtype : "bottomToolbar",
 				height : DB.screenHeight * 0.08,
-				docked : "bottom",
-				items : [{
-						xtype : "spacer",
-					}, {
-						id : "updateBtn",
-						xtype : "button",
-						ui : "plain",
-						iconCls : "download",
-						iconMask : true,
-					}, {
-						xtype : "spacer",
-					}, {
-						xtype : "button",
-						ui : "plain",
-						iconCls : "search",
-						iconMask : true,
-					}, {
-						xtype : "spacer",
-					}, {
-						id : "aboutBtn",
-						xtype : "button",
-						ui : "plain",
-						iconCls : "more", 
-						iconMask : true,
-					}, {
-						xtype : "spacer",
-					}, {
-						id : "backBtn",
-						xtype : "button",
-						ui : "plain",
-						iconCls : "reply", 
-						iconMask : true,
-					}, {
-						xtype : "spacer",
-					},
-				],
 			},
 		],
 	},

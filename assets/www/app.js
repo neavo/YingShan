@@ -19,17 +19,20 @@ Ext.application({
 	views : [
 		"mainContainer",
 		"homeView",
+		"categoryContainer",
+		"bottomToolbar",
 		"childCategoryView",
-		"info.mainView",
-		"info.detailView",
+		"infoListView",
+		"infoDetailView",
 	],
 	
 	controllers : [
-		"home.mainViewController",
-		"home.categoryContainerController",
+		"homeViewController",
+		"categoryContainerController",
+		"bottomToolbar",
 		"childCategoryController",
-		"info.mainViewController",
-		"info.detailViewController",
+		"infoListView",
+		"infoDetailView",
 	],
 
 	launch : function () {
