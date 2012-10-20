@@ -34,8 +34,29 @@ Ext.define("Project.view.homeView", {
 				xtype : "categoryContainer",
 				height : DB.screenHeight * 0.42,
 			}, {
-				xtype : "bottomToolbar",
+				xtype : "toolbar",
 				height : DB.screenHeight * 0.08,
+				docked : "bottom",
+				items : [{
+						xtype : "spacer",
+					}, {
+						xtype : "searchBtn",
+					}, {
+						xtype : "spacer",
+					}, {
+						xtype : "updateBtn",
+					}, {
+						xtype : "spacer",
+					}, {
+						xtype : "aboutBtn",
+					}, {
+						xtype : "spacer",
+					}, {
+						xtype : "backBtn",
+					}, {
+						xtype : "spacer",
+					},
+				],
 			},
 		],
 	},

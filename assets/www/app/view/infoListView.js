@@ -28,27 +28,19 @@ Ext.define("Project.view.infoListView", {
 				items : [{
 						xtype : "spacer",
 					}, {
-						id : "prevPageBtnAtInfoMainView",
-						xtype : "button",
-						ui : "plain",
-						iconCls : "arrow_left",
-						iconMask : true,
+						xtype : "homeBtn",
 					}, {
 						xtype : "spacer",
 					}, {
-						id : "nextPageBtnAtInfoMainView",
-						xtype : "button",
-						ui : "plain",
-						iconCls : "arrow_right",
-						iconMask : true,
+						xtype : "prevBtn",
 					}, {
 						xtype : "spacer",
 					}, {
-						id : "backBtnAtInfoMainView",
-						xtype : "button",
-						ui : "plain",
-						iconCls : "reply",
-						iconMask : true,
+						xtype : "nextBtn",
+					}, {
+						xtype : "spacer",
+					}, {
+						xtype : "backBtn",
 					}, {
 						xtype : "spacer",
 					},

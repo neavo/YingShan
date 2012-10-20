@@ -1,0 +1,25 @@
+Ext.define("Project.controller.widget.prevBtn", {
+	extend : "Ext.app.Controller",
+	config : {
+		refs : {
+			prevBtn : "prevBtn",
+		},
+		control : {
+			prevBtn : {
+				tap : "onPrevBtnTap",
+			},
+		},
+	},
+	onPrevBtnTap : function () {
+		if (currInfoPageNum == 1) {
+			Ext.Msg.alert("掌上 • 英山 v2.0", "已是第一页！");
+		} else {
+			currInfoPageNum = currInfoPageNum - 1;
+			Ext.getStore("mainStore").setProxy({
+				type : "jsonp",
+				url : Website.serverUrl + Website.infoScriptUrl + DB.activatedCategory + "&infoPageNum=" + currInfoPageNum,
+			});
+			Ext.getStore("mainStore").load();
+		};
+	},
+});
