@@ -145,10 +145,25 @@
    	text-align : center;
    	font-size : 0.9em;
 }
-.infoDetailContent {
+.infoDetailContentSmaller {
+    font-size : 0.6em;
+	margin-top : 0.5em;
+}
+.infoDetailContentSmall {
+    font-size : 0.8em;
+	margin-top : 0.5em;
+}
+.infoDetailContentNormal {
     font-size : 1em;
 	margin-top : 0.5em;
-	line-height : 1.5em; 
+}
+.infoDetailContentBig {
+    font-size : 1.2em;
+	margin-top : 0.5em;
+}
+.infoDetailContentBigger {
+    font-size : 1.4em;
+	margin-top : 0.5em;
 }
 
 /*

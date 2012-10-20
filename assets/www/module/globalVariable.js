@@ -9,6 +9,7 @@ var Website = {
 
 // 本地数据全局命名空间
 var DB = {
+	versionInfo : "掌上 • 英山 v2.0",
 	activatedController : "", // 正在激活的页面的控制器
 	activatedCategory : "", // 正在激活的页面的频道ID
 	weather : {
@@ -19,7 +20,8 @@ var DB = {
 	},
 	screenHeight : 0, // 屏幕高度
 	screenWidth : 0, // 屏幕宽度
-	videoUrl : "",
+	videoUrl : "",		// 要播放的视频的url
+	scaleFlag : 0,		// 详细信息页面缩放Flag
 };
 
 // 页面指示

@@ -3,12 +3,16 @@ Ext.define("Project.controller.init", {
 	config : {
 		refs : {
 			homeView : "homeView",
+			childCategoryView : "childCategoryView",
+			infoDetailView : "infoDetailView",
 			mainContainer : "mainContainer",
 		},
 		control : {},
 	},
 	launch : function () {
-		DB.mainContainer = this.getMainContainer();
 		DB.homeView = this.getHomeView();
+		DB.childCategoryView = this.getChildCategoryView();
+		DB.infoDetailView = this.getInfoDetailView();
+		DB.mainContainer = this.getMainContainer();
 	},
 });

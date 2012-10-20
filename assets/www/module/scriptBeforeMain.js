@@ -15,5 +15,5 @@ function setActivatedStore(store) {
 
 // 视频播放插件
 function playVideo() {
-	window.plugins.videoPlayer.play(DB.videoUrl);  
-}
+	window.plugins.videoPlayer.play(DB.videoUrl);
+};

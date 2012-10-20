@@ -13,11 +13,11 @@ Ext.define("Project.view.customHtmlView", {
 					}, {
 						xtype : "spacer",
 					}, {
-						xtype : "updateBtn",
+						xtype : "biggerBtn",
 					}, {
 						xtype : "spacer",
 					}, {
-						xtype : "aboutBtn",
+						xtype : "smallerBtn",
 					}, {
 						xtype : "spacer",
 					}, {
