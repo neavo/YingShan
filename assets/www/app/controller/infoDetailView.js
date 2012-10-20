@@ -4,25 +4,15 @@ Ext.define("Project.controller.infoDetailView", {
 		refs : {
 			mainContainer : "mainContainer",
 			infoMainView : "infoMainView",
-			
-			backBtnAtInfoDetailView : "#backBtnAtInfoDetailView",
 		},
-		control : {
-			backBtnAtInfoDetailView : {
-				tap : "onBackBtnAtInfoDetailViewTap",
-			},
-		},
+		control : {},
 	},
 	launch : function () {
 		this.mainContainer = this.getMainContainer();
 		this.infoMainView = this.getInfoMainView();
 	},
-	goBack : function()
-	{
+	goBack : function () {
 		setActivatedController(this.getApplication().getController("infoListView"));
-		this.mainContainer.setActiveItem(this.infoMainView);		
-	},
-	onBackBtnAtInfoDetailViewTap : function () {
-		DB.activatedController.goBack();
+		this.mainContainer.setActiveItem(this.infoMainView);
 	},
 });

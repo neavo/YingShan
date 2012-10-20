@@ -1,10 +1,11 @@
-Ext.define("Project.controller.categoryContainerController", {
+Ext.define("Project.controller.mainCategoryContainer", {
 	extend : "Ext.app.Controller",
 	config : {
 		refs : {
 			mainContainer : "mainContainer",
-			infoMainView : "infoMainView",
 			childCategoryView : "childCategoryView",
+			infoMainView : "infoMainView",
+			infoDetailView : "infoDetailView",
 			
 			categoryContainer : "#categoryContainer",
 			childCategoryTitle : "#childCategoryTitle",
@@ -22,6 +23,7 @@ Ext.define("Project.controller.categoryContainerController", {
 		this.mainContainer = this.getMainContainer();
 		this.childCategoryView = this.getChildCategoryView();
 		this.infoMainView = this.getInfoMainView();
+		this.infoDetailView = this.getInfoDetailView();
 		
 		this.childCategoryTitle = this.getChildCategoryTitle();
 		this.childCategoryList = this.getChildCategoryList();
@@ -54,43 +56,18 @@ Ext.define("Project.controller.categoryContainerController", {
 					html : "<img class = categoryIcon src = \"" + Category[key]["categoryIconUrl"] + "\" />"
 					 + "<div class = categoryTitle ><b>" + Category[key]["categoryTitle"] + "<b></div>",
 					parent : this,
-					categoryId : Category[key]["categoryId"],
 					categoryTitle : Category[key]["categoryTitle"],
-					categoryIconUrl : Category[key]["categoryIconUrl"],
-					isParentCategory : Category[key]["isParentCategory"],
-					isUploadCategory : Category[key]["isUploadCategory"],
 					childCategory : Category[key]["childCategory"],
-					// 无子频道
-					setActivatedView : function (parent, id, title) {
-						setActivatedController(parent.getApplication().getController("infoListView"));
-						setActivatedCategory(id);
-						parent.topBar.setTitle(title);
-						parent.mainList.getStore().setProxy({
-							type : "jsonp",
-							url : Website.serverUrl + Website.infoScriptUrl + DB.activatedCategory + "&infoPageNum=1",
-						});
-						parent.mainList.getStore().load();
-						parent.mainContainer.setActiveItem(parent.infoMainView);
-					},
-					// 有子频道
 					setChildView : function (parent, childCategory, title) {
 						setActivatedController(parent.getApplication().getController("childCategoryController"));
 						parent.childCategoryTitle.setTitle(title);
-						if (!parent.childCategoryList.getStore()) {
-							parent.childCategoryList.setData(childCategory);
-						} else {
-							parent.childCategoryList.getStore().setData(childCategory);							
-						};
+						parent.childCategoryList.getStore().setData(childCategory);
 						parent.mainContainer.setActiveItem(parent.childCategoryView);
 					},
 					listeners : {
 						tap : {
 							fn : function () {
-								if (this.config.isParentCategory) {
-									this.config.setChildView(this.config.parent, this.config.childCategory, this.config.categoryTitle);
-								} else {
-									this.config.setActivatedView(this.config.parent, this.config.categoryId, this.config.categoryTitle);
-								};
+								this.config.setChildView(this.config.parent, this.config.childCategory, this.config.categoryTitle);
 							},
 							element : "element",
 						},

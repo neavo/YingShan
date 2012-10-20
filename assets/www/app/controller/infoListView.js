@@ -71,7 +71,6 @@ Ext.define("Project.controller.infoListView", {
 	},
 	// 返回
 	onBackBtnAtInfoMainViewTap : function () {
-		console.log(DB.activatedController);
 		DB.activatedController.goBack();
 	},
 	// 下一页

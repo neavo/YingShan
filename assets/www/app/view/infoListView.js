@@ -36,18 +36,18 @@ Ext.define("Project.view.infoListView", {
 					}, {
 						xtype : "spacer",
 					}, {
-						id : "backBtnAtInfoMainView",
-						xtype : "button",
-						ui : "plain",
-						iconCls : "reply",
-						iconMask : true,
-					}, {
-						xtype : "spacer",
-					}, {
 						id : "nextPageBtnAtInfoMainView",
 						xtype : "button",
 						ui : "plain",
 						iconCls : "arrow_right",
+						iconMask : true,
+					}, {
+						xtype : "spacer",
+					}, {
+						id : "backBtnAtInfoMainView",
+						xtype : "button",
+						ui : "plain",
+						iconCls : "reply",
 						iconMask : true,
 					}, {
 						xtype : "spacer",

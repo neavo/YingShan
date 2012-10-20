@@ -2,7 +2,6 @@ Ext.application({
 	name : "Project",
 	
 	requires : [
-		"Ext.ActionSheet",
 		"Ext.MessageBox",
 		"Ext.dataview.List",
 		"Ext.data.proxy.JsonP",
@@ -10,10 +9,12 @@ Ext.application({
 	
 	models : [
 		"mainModel",
+		"childCategoryModel",
 	],
 	
 	stores : [
 		"mainStore",
+		"childCategoryStore",
 	],
 	
 	views : [
@@ -24,15 +25,17 @@ Ext.application({
 		"childCategoryView",
 		"infoListView",
 		"infoDetailView",
+		"customHtmlView",
 	],
 	
 	controllers : [
 		"homeViewController",
-		"categoryContainerController",
+		"mainCategoryContainer",
 		"bottomToolbar",
 		"childCategoryController",
 		"infoListView",
 		"infoDetailView",
+		"customHtmlView",
 	],
 
 	launch : function () {

@@ -12,8 +12,10 @@ Ext.define("Project.view.mainContainer", {
 				xtype : "childCategoryView",
 			}, {
 				xtype : "infoMainView",
-			},{
+			}, {
 				xtype : "infoDetailView",
+			}, {
+				xtype : "customHtmlView",
 			},
 		],
 	},

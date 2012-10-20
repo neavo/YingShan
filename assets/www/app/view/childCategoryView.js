@@ -12,6 +12,7 @@ Ext.define("Project.view.childCategoryView", {
 				id : "childCategoryList",
 				xtype : "list",
 				cls : "childCategoryList",
+				store : "childCategoryStore",
 				height : DB.screenHeight * 0.84,
 				onItemDisclosure : true,
 				emptyText : "无更多记录",
