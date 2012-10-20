@@ -19,6 +19,7 @@ Ext.define("Project.controller.infoListView", {
 	onMainListAtInfoMainViewItemTap : function (list, index, e, eOpts) {
 		if (list.getStore().getAt(index).get("videourl") != "" && list.getStore().getAt(index).get("videourl").toLowerCase() != "null") {
 			DB.videoUrl = list.getStore().getAt(index).get("videourl");
+			DB.scaleFlag = 0;
 			DB.infoDetailView.setHtml(
 				"<div class = infoDetailTitle><b>" + list.getStore().getAt(index).get("title") + "</b></div>"
 				 + "<div class = infoDetailDataTime>" + list.getStore().getAt(index).get("datetime") + "</div>"
@@ -27,6 +28,7 @@ Ext.define("Project.controller.infoListView", {
 				 + "<center><input class= \"palyVideo\"  type =\"button\" onclick=\"playVideo();\" /></center>"
 				 + "<div class = infoDetailContentNormal>" + list.getStore().getAt(index).get("content") + "</div>");
 		} else {
+			DB.scaleFlag = 0;
 			DB.infoDetailView.setHtml(
 				"<div class = infoDetailTitle><b>" + list.getStore().getAt(index).get("title") + "</b></div>"
 				 + "<div class = infoDetailDataTime>" + list.getStore().getAt(index).get("datetime") + "</div>"
