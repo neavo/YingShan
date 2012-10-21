@@ -20,7 +20,7 @@ Ext.define("Project.controller.homeViewController", {
 		}, 5000);
 	},
 	goBack : function () {
-		Ext.Msg.confirm("掌上 • 英山 v2.0", "确定退出“掌上 • 英山”？", function (buttonId, value, opt) {
+		Ext.Msg.confirm(DB.versionInfo, "确定退出“掌上 • 英山”？", function (buttonId, value, opt) {
 			if (buttonId == "yes") {
 				navigator.app.exitApp();
 			}

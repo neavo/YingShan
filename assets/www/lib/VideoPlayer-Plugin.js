@@ -9,25 +9,24 @@
 /**
  * Constructor
  */
-function VideoPlayer() {
-};
+function VideoPlayer() {};
 
 /**
  * Starts the video player intent
  *
  * @param url           The url to play
  */
-VideoPlayer.prototype.play = function(url) {
-    cordova.exec(null, null, "VideoPlayer", "playVideo", [url]);
+VideoPlayer.prototype.play = function (url) {
+	cordova.exec(null, null, "VideoPlayer", "playVideo", [url]);
 };
 
 /**
  * Load VideoPlayer
  */
 
-if(!window.plugins) {
-    window.plugins = {};
+if (!window.plugins) {
+	window.plugins = {};
 }
 if (!window.plugins.videoPlayer) {
-    window.plugins.videoPlayer = new VideoPlayer();
+	window.plugins.videoPlayer = new VideoPlayer();
 }

@@ -1,9 +1,9 @@
 // 服务器相关参数
 var Website = {
 	// 发布服务器地址
-	// serverUrl : "http://59.69.65.153:8080/WiseAgServer/Server/",
+	serverUrl : "http://221.235.190.14:8080/YingShanServer/Server/",
 	// 开发服务器地址
-	serverUrl : "http://59.69.65.153:8080/YingShanServer/Server/",
+	// serverUrl : "http://59.69.65.153:8080/YingShanServer/Server/",
 	infoScriptUrl : "info.jsp?categoryid=",
 };
 

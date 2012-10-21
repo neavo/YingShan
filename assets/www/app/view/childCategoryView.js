@@ -24,11 +24,7 @@ Ext.define("Project.view.childCategoryView", {
 				xtype : "toolbar",
 				height : DB.screenHeight * 0.08,
 				docked : "bottom",
-				items : [/*{
-						xtype : "spacer",
-					}, {
-						xtype : "searchBtn",
-					}, */{
+				items : [{
 						xtype : "spacer",
 					}, {
 						xtype : "updateBtn",

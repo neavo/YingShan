@@ -12,7 +12,7 @@ Ext.define("Project.controller.widget.prevBtn", {
 	},
 	onPrevBtnTap : function () {
 		if (currInfoPageNum == 1) {
-			Ext.Msg.alert("掌上 • 英山 v2.0", "已是第一页！");
+			Ext.Msg.alert(DB.versionInfo, "已是第一页！");
 		} else {
 			currInfoPageNum = currInfoPageNum - 1;
 			Ext.getStore("mainStore").setProxy({

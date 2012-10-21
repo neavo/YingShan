@@ -25,11 +25,7 @@ Ext.define("Project.view.infoListView", {
 				xtype : "toolbar",
 				height : DB.screenHeight * 0.08,
 				docked : "bottom",
-				items : [/*{
-						xtype : "spacer",
-					}, {
-						xtype : "homeBtn",
-					}, */{
+				items : [{
 						xtype : "spacer",
 					}, {
 						xtype : "prevBtn",
