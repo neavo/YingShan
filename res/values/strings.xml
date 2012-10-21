@@ -4,6 +4,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">掌上英山</string>
-    <string name="versionXmlUrl">http://192.168.45.1:8080/Update/version.xml</string>
+    <string name="versionXmlUrl">http://221.235.190.14:8080/CheckUpdate/ServerVersion.xml</string>
 
 </resources>
