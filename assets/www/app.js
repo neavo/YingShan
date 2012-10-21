@@ -19,7 +19,7 @@ Ext.application({
 	
 	views : [
 		"widget.backBtn",
-		"widget.searchBtn",
+		//"widget.searchBtn",
 		"widget.updateBtn",
 		"widget.aboutBtn",
 		"widget.prevBtn",
@@ -39,7 +39,7 @@ Ext.application({
 	controllers : [
 		"init",
 		"widget.backBtn",
-		"widget.searchBtn",
+		//"widget.searchBtn",
 		"widget.updateBtn",
 		"widget.aboutBtn",
 		"widget.prevBtn",

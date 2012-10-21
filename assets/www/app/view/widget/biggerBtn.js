@@ -4,7 +4,7 @@ Ext.define("Project.view.widget.biggerBtn", {
 	config : {
 		xtype : "button",
 		ui : "plain",
-		iconCls : "add",
+		iconCls : "arrow_up",
 		iconMask : true,
 	},
 });

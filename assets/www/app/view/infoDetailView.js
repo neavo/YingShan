@@ -2,7 +2,7 @@ Ext.define("Project.view.infoDetailView", {
 	extend : "Ext.Container",
 	xtype : "infoDetailView",
 	config : {
-		scrollable : "both",
+		scrollable : "vertical",
 		styleHtmlContent : true,
 		cls : "detail",
 		items : [{
@@ -14,11 +14,11 @@ Ext.define("Project.view.infoDetailView", {
 				xtype : "toolbar",
 				height : DB.screenHeight * 0.08,
 				docked : "bottom",
-				items : [{
+				items : [/*{
 						xtype : "spacer",
 					}, {
 						xtype : "searchBtn",
-					}, {
+					}, */{
 						xtype : "spacer",
 					}, {
 						xtype : "biggerBtn",

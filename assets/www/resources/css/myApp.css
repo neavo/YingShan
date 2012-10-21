@@ -146,23 +146,23 @@
    	font-size : 0.9em;
 }
 .infoDetailContentSmaller {
-    font-size : 0.6em;
-	margin-top : 0.5em;
-}
-.infoDetailContentSmall {
     font-size : 0.8em;
 	margin-top : 0.5em;
 }
-.infoDetailContentNormal {
-    font-size : 1em;
+.infoDetailContentSmall {
+    font-size : 1.0em;
 	margin-top : 0.5em;
 }
-.infoDetailContentBig {
+.infoDetailContentNormal {
     font-size : 1.2em;
 	margin-top : 0.5em;
 }
-.infoDetailContentBigger {
+.infoDetailContentBig {
     font-size : 1.4em;
+	margin-top : 0.5em;
+}
+.infoDetailContentBigger {
+    font-size : 1.6em;
 	margin-top : 0.5em;
 }
 

@@ -4,7 +4,7 @@ Ext.define("Project.view.widget.smallerBtn", {
 	config : {
 		xtype : "button",
 		ui : "plain",
-		iconCls : "delete",
+		iconCls : "arrow_down",
 		iconMask : true,
 	},
 });

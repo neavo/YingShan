@@ -343,12 +343,12 @@ var Category = [{
 		categoryTitle : "生活",
 		categoryIconUrl : "resources/icons/08.png",
 		categoryStyle : "parentCategory",
-		childCategory : [{
+		childCategory : [/*{
 				categoryTitle : "常用号码",
 				categoryIconUrl : "resources/icons/08.png",
 				categoryStyle : "customHtml",
 				customHtml : "<iframe src = resources/html/PhoneNumber.htm frameborder = no width = 100%  height = 60%></iframe>",
-			}, {
+			}, */{
 				categoryId : "456",
 				categoryTitle : "话费查询",
 				categoryIconUrl : "resources/icons/08.png",

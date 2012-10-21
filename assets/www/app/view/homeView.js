@@ -37,11 +37,11 @@ Ext.define("Project.view.homeView", {
 				xtype : "toolbar",
 				height : DB.screenHeight * 0.08,
 				docked : "bottom",
-				items : [{
+				items : [/*{
 						xtype : "spacer",
 					}, {
 						xtype : "searchBtn",
-					}, {
+					}, */{
 						xtype : "spacer",
 					}, {
 						xtype : "updateBtn",
