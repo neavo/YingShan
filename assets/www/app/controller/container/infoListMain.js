@@ -1,26 +1,28 @@
-Ext.define("Project.controller.infoListView", {
+Ext.define("Project.controller.container.infoListMain", {
 	extend : "Ext.app.Controller",
 	config : {
 		refs : {
-			mainListAtInfoMainView : "#mainListAtInfoMainView",
+			infoListMain : "infoListMain",
 		},
 		control : {
-			mainListAtInfoMainView : {
-				itemtap : "onMainListAtInfoMainViewItemTap",
+			infoListMain : {
+				itemtap : "onInfoListMainItemTap",
 			},
 		},
 	},
-	// 响应返回键
-	goBack : function () {
-		setActivatedController(this.getApplication().getController("childCategoryController"));
-		DB.mainContainer.setActiveItem(DB.childCategoryView);
-	},
 	// 点击列表条目
-	onMainListAtInfoMainViewItemTap : function (list, index, e, eOpts) {
+	onInfoListMainItemTap : function (list, index, e, eOpts) {
+		DoAnim();
+		DB.infoListTop.hide();
+		DB.infoListMain.hide();
+		DB.infoListBottom.hide();
+		DB.infoDetailTop.show();
+		DB.infoDetailMain.show();
+		DB.infoDetailBottom.show();
 		if (list.getStore().getAt(index).get("videourl") != "" && list.getStore().getAt(index).get("videourl").toLowerCase() != "null") {
 			DB.videoUrl = list.getStore().getAt(index).get("videourl");
 			DB.scaleFlag = 0;
-			DB.infoDetailView.setHtml(
+			DB.infoDetailMain.setHtml(
 				"<div class = infoDetailTitle><b>" + list.getStore().getAt(index).get("title") + "</b></div>"
 				 + "<div class = infoDetailDataTime>" + list.getStore().getAt(index).get("datetime") + "</div>"
 				 + "<div class = infoDetailDataTime>" + "来源：" + list.getStore().getAt(index).get("publisher") + "</div>"
@@ -29,14 +31,13 @@ Ext.define("Project.controller.infoListView", {
 				 + "<div class = infoDetailContentNormal>" + list.getStore().getAt(index).get("content") + "</div>");
 		} else {
 			DB.scaleFlag = 0;
-			DB.infoDetailView.setHtml(
+			DB.infoDetailMain.setHtml(
 				"<div class = infoDetailTitle><b>" + list.getStore().getAt(index).get("title") + "</b></div>"
 				 + "<div class = infoDetailDataTime>" + list.getStore().getAt(index).get("datetime") + "</div>"
 				 + "<div class = infoDetailDataTime>" + "来源：" + list.getStore().getAt(index).get("publisher") + "</div>"
 				 + "<hr width = 100% size = 2 color = #000000 align = center noshade>"
 				 + "<div class = infoDetailContentNormal>" + list.getStore().getAt(index).get("content") + "</div>");
 		};
-		setActivatedController(this.getApplication().getController("infoDetailView"));
-		DB.mainContainer.setActiveItem(DB.infoDetailView);
+		setActivatedController(this.getApplication().getController("infoDetail"));
 	},
 });

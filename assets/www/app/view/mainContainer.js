@@ -2,20 +2,49 @@ Ext.define("Project.view.mainContainer", {
 	extend : "Ext.Container",
 	xtype : "mainContainer",
 	config : {
-		layout : {
-			type : "card",
-			animation : "slide",
-		},
+		cls : "mainContainer",
 		items : [{
-				xtype : "homeView",
+				xtype : "homeTop",
 			}, {
-				xtype : "childCategoryView",
+				xtype : "homeMain",
 			}, {
-				xtype : "infoMainView",
+				xtype : "homeBottom",
+			},{
+				xtype : "childCategoryTop",
+				hidden : true,
 			}, {
-				xtype : "infoDetailView",
+				xtype : "childCategoryMain",
+				hidden : true,
 			}, {
-				xtype : "customHtmlView",
+				xtype : "childCategoryBottom",
+				hidden : true,
+			},{
+				xtype : "infoListTop",
+				hidden : true,
+			}, {
+				xtype : "infoListMain",
+				hidden : true,
+			}, {
+				xtype : "infoListBottom",
+				hidden : true,
+			},{
+				xtype : "infoDetailTop",
+				hidden : true,
+			}, {
+				xtype : "infoDetailMain",
+				hidden : true,
+			}, {
+				xtype : "infoDetailBottom",
+				hidden : true,
+			},{
+				xtype : "customHtmlTop",
+				hidden : true,
+			}, {
+				xtype : "customHtmlMain",
+				hidden : true,
+			}, {
+				xtype : "customHtmlBottom",
+				hidden : true,
 			},
 		],
 	},

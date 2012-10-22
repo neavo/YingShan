@@ -1,29 +1,22 @@
-Ext.define("Project.controller.homeViewController", {
+Ext.define("Project.controller.homeView", {
 	extend : "Ext.app.Controller",
 	config : {
-		refs : {
-			adCarousel : "#adCarousel",
-		},
+		refs : {},
 		control : {},
 	},
 	launch : function () {
-		var t = 0;
-		var adCarousel = this.getAdCarousel();
 		setActivatedController(this);
-		setInterval(function () {
-			if (t == 3) {
-				t = 0;
-			} else {
-				t = t + 1;
-			}
-			adCarousel.setActiveItem(t);
-		}, 5000);
 	},
 	goBack : function () {
+		DB.mainContainer.hide();
 		Ext.Msg.confirm(DB.versionInfo, "确定退出“掌上 • 英山”？", function (buttonId, value, opt) {
 			if (buttonId == "yes") {
 				navigator.app.exitApp();
 			}
+			else
+			{
+				DB.mainContainer.show();
+			};
 		});
 	},
 });

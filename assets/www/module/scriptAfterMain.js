@@ -1,7 +1,16 @@
+// 播放翻页动画
+function DoAnim() {
+	Ext.Anim.run(DB.mainContainer, "slide", {
+		out : false,
+	});
+};
+
 // PhoneGap
 {
 	document.addEventListener("deviceready", onDeviceReady, false);
 	function onDeviceReady() {
+		// PhoneGap加载完毕以后干掉启动闪屏
+		cordova.exec(null, null, "SplashScreen", "hide", []);
 		document.addEventListener("backbutton", onBackButtonTap, false);
 	};
 	function onBackButtonTap() {
@@ -55,11 +64,11 @@
 					DB.weather.text = result.forecasts[0].text;
 					DB.weather.low = result.forecasts[0].low;
 					DB.weather.high = result.forecasts[0].high;
-					Ext.getCmp("weatherContainer").setHtml(
+					Ext.getCmp("homeTop").setHtml(
 						"<img class = weatherImage src = " + "resources/weather/" + DB.weather.icon + ".png >"
 						 + "<div class = weatherTextLine><b>" + DB.weather.text + "　" + DB.weather.low + "℃ ~ " + DB.weather.high + "℃" + "<b></div>");
 				};
 			},
 		});
-	}, 10000);
+	}, 5000);
 };

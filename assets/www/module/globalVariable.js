@@ -9,7 +9,7 @@ var Website = {
 
 // 本地数据全局命名空间
 var DB = {
-	versionInfo : "掌上 • 英山 v2.0",
+	versionInfo : "掌上 • 英山 v3.0",
 	activatedController : "", // 正在激活的页面的控制器
 	activatedCategory : "", // 正在激活的页面的频道ID
 	weather : {
@@ -20,8 +20,8 @@ var DB = {
 	},
 	screenHeight : 0, // 屏幕高度
 	screenWidth : 0, // 屏幕宽度
-	videoUrl : "",		// 要播放的视频的url
-	scaleFlag : 0,		// 详细信息页面缩放Flag
+	videoUrl : "", // 要播放的视频的url
+	scaleFlag : 0, // 详细信息页面缩放Flag
 };
 
 // 页面指示
@@ -221,6 +221,11 @@ var Category = [{
 				categoryId : "434",
 				categoryTitle : "专家在线",
 				categoryIconUrl : "resources/icons/03.png",
+			}, {
+				categoryTitle : "发布供求",
+				categoryIconUrl : "resources/icons/03.png",
+				categoryStyle : "publishPanel",
+				targetCategoryId : "433",
 			},
 		],
 	}, {
@@ -324,7 +329,7 @@ var Category = [{
 				categoryTitle : "档案查询",
 				categoryIconUrl : "resources/icons/07.png",
 				categoryStyle : "customHtml",
-				customHtml : "<iframe src = http://219.139.49.58:8888/health/website/web_index_sj.action frameborder = no width = 100%  height = 92% scrolling = no></iframe>",
+				customHtml : "<iframe src = http://219.139.49.58:8888/health/website/web_index_sj.action frameborder = no width = 100%  height = 100% scrolling = no></iframe>",
 			}, {
 				categoryId : "453",
 				categoryTitle : "健康知识",
@@ -343,12 +348,7 @@ var Category = [{
 		categoryTitle : "生活",
 		categoryIconUrl : "resources/icons/08.png",
 		categoryStyle : "parentCategory",
-		childCategory : [/*{
-				categoryTitle : "常用号码",
-				categoryIconUrl : "resources/icons/08.png",
-				categoryStyle : "customHtml",
-				customHtml : "<iframe src = resources/html/PhoneNumber.htm frameborder = no width = 100%  height = 60%></iframe>",
-			}, */{
+		childCategory : [{
 				categoryId : "456",
 				categoryTitle : "话费查询",
 				categoryIconUrl : "resources/icons/08.png",

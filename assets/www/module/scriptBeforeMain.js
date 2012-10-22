@@ -17,3 +17,4 @@ function setActivatedStore(store) {
 function playVideo() {
 	window.plugins.videoPlayer.play(DB.videoUrl);
 };
+

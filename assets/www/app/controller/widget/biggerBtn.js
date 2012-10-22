@@ -13,19 +13,19 @@ Ext.define("Project.controller.widget.biggerBtn", {
 	onBiggerBtnTap : function () {
 		switch (DB.scaleFlag) {
 		case -2 :
-			DB.infoDetailView.setHtml(DB.infoDetailView.getHtml().replace("infoDetailContentSmaller", "infoDetailContentSmall"));
+			DB.infoDetailMain.setHtml(DB.infoDetailMain.getHtml().replace("infoDetailContentSmaller", "infoDetailContentSmall"));
 			DB.scaleFlag = DB.scaleFlag + 1;
 			break;
 		case -1 :
-			DB.infoDetailView.setHtml(DB.infoDetailView.getHtml().replace("infoDetailContentSmall", "infoDetailContentNormal"));
+			DB.infoDetailMain.setHtml(DB.infoDetailMain.getHtml().replace("infoDetailContentSmall", "infoDetailContentNormal"));
 			DB.scaleFlag = DB.scaleFlag + 1;
 			break;
 		case 0 :
-			DB.infoDetailView.setHtml(DB.infoDetailView.getHtml().replace("infoDetailContentNormal", "infoDetailContentBig"));
+			DB.infoDetailMain.setHtml(DB.infoDetailMain.getHtml().replace("infoDetailContentNormal", "infoDetailContentBig"));
 			DB.scaleFlag = DB.scaleFlag + 1;
 			break;
 		case 1 :
-			DB.infoDetailView.setHtml(DB.infoDetailView.getHtml().replace("infoDetailContentBig", "infoDetailContentBigger"));
+			DB.infoDetailMain.setHtml(DB.infoDetailMain.getHtml().replace("infoDetailContentBig", "infoDetailContentBigger"));
 			DB.scaleFlag = DB.scaleFlag + 1;
 			break;
 		case 2 :
