@@ -45,6 +45,15 @@ Ext.define("Project.view.mainContainer", {
 			}, {
 				xtype : "customHtmlBottom",
 				hidden : true,
+			},{
+				xtype : "publishTop",
+				hidden : true,
+			}, {
+				xtype : "publishMain",
+				hidden : true,
+			}, {
+				xtype : "publishBottom",
+				hidden : true,
 			},
 		],
 	},

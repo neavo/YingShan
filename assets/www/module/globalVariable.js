@@ -3,7 +3,7 @@ var Website = {
 	// 发布服务器地址
 	serverUrl : "http://221.235.190.14:8080/YingShanServer/Server/",
 	// 开发服务器地址
-	// serverUrl : "http://59.69.65.153:8080/YingShanServer/Server/",
+	//serverUrl : "http://59.69.65.180:8080/YingShanServer/Server/",
 	infoScriptUrl : "info.jsp?categoryid=",
 };
 
@@ -218,14 +218,14 @@ var Category = [{
 				categoryTitle : "供求信息",
 				categoryIconUrl : "resources/icons/03.png",
 			}, {
-				categoryId : "434",
-				categoryTitle : "专家在线",
-				categoryIconUrl : "resources/icons/03.png",
-			}, {
 				categoryTitle : "发布供求",
 				categoryIconUrl : "resources/icons/03.png",
 				categoryStyle : "publishPanel",
 				targetCategoryId : "433",
+			}, {
+				categoryId : "434",
+				categoryTitle : "专家在线",
+				categoryIconUrl : "resources/icons/03.png",
 			},
 		],
 	}, {

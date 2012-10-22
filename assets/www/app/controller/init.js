@@ -19,6 +19,9 @@ Ext.define("Project.controller.init", {
 			customHtmlTop : "customHtmlTop",
 			customHtmlMain : "customHtmlMain",
 			customHtmlBottom : "customHtmlBottom",
+			publishTop : "publishTop",
+			publishMain : "publishMain",
+			publishBottom : "publishBottom",
 		},
 	},
 	launch : function () {
@@ -39,5 +42,8 @@ Ext.define("Project.controller.init", {
 		DB.customHtmlTop = this.getCustomHtmlTop();
 		DB.customHtmlMain = this.getCustomHtmlMain();
 		DB.customHtmlBottom = this.getCustomHtmlBottom();
+		DB.publishTop = this.getPublishTop();
+		DB.publishMain = this.getPublishMain();
+		DB.publishBottom = this.getPublishBottom();
 	},
 });

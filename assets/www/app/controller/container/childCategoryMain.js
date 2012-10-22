@@ -47,13 +47,27 @@ Ext.define("Project.controller.container.childCategoryMain", {
 		DB.customHtmlMain.setHtml(html);
 		setActivatedController(this.getApplication().getController("customHtml"));
 	},
+	// 发布信息页面
+	setPublishView : function (title) {
+		DoAnim();
+		DB.childCategoryTop.hide();
+		DB.childCategoryMain.hide();
+		DB.childCategoryBottom.hide();
+		DB.publishTop.show();
+		DB.publishMain.show();
+		DB.publishBottom.show();
+		DB.publishTop.setTitle(title);
+		setActivatedController(this.getApplication().getController("publishView"));
+	},
 	// 响应按键点击
 	OnChildCategoryMainTap : function (list, index, target, record, e, eOpts) {
 		var data = record.getData();
 		if (data.categoryStyle == "parentCategory") {
 			this.setChildView(data.childCategory, data.categoryTitle);
 		} else if (data.categoryStyle == "customHtml") {
-			this.setCustomView(data.customHtml, data.categoryTitle);
+			this.setCustomView(data.customHtml, data.categoryTitle);	
+		} else if (data.categoryStyle == "publishPanel") {
+			this.setPublishView(data.categoryTitle);
 		} else {
 			this.setActivatedView(data.categoryId, data.categoryTitle);
 		};
