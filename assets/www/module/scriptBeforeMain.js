@@ -18,3 +18,10 @@ function playVideo() {
 	window.plugins.videoPlayer.play(DB.videoUrl);
 };
 
+// 自定义的Alert
+function DoAlert(string) {
+	DB.mainContainer.hide();
+	Ext.Msg.alert(DB.versionInfo, string, function (buttonId, value, opt) {
+		DB.mainContainer.show();
+	});
+};

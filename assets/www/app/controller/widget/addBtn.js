@@ -6,7 +6,9 @@ Ext.define("Project.controller.widget.addBtn", {
 			
 			titleTextFiled : "#titleTextFiled",
 			publisherTextFiled : "#publisherTextFiled",
+			contactTextFiled : "#contactTextFiled",
 			contentTextFiled : "#contentTextFiled",
+			publishIdTextFiled : "#publishIdTextFiled",
 		},
 		control : {
 			addBtn : {
@@ -17,43 +19,42 @@ Ext.define("Project.controller.widget.addBtn", {
 	launch : function () {
 		DB.titleTextFiled = this.getTitleTextFiled();
 		DB.publisherTextFiled = this.getPublisherTextFiled();
+		DB.contactTextFiled = this.getContactTextFiled();
 		DB.contentTextFiled = this.getContentTextFiled();
+		DB.publishIdTextFiled = this.getPublishIdTextFiled();
 	},
 	onAddBtnTap : function () {
-		//console.log('dd');
-		var systemId = Math.round(new Date().getTime() / 1000);
-		//console.log(systemId);
-		var formpanel = DB.publishMain;
-		//系统自动分配编号，但手机号要用户输入
-		//console.log(formpanel);
-		if (formpanel.getValues().title == 0) {
-			//alert("请输入问题描述");
-			alert("请输入问题描述");
+		if (DB.titleTextFiled.getValue() == "" || DB.titleTextFiled.getValue().toLowerCase() == "null") {
+			DoAlert("必须输入标题！");
 			return;
-		} else if (formpanel.getValues().publisher == 0) {
-			//alert("请输入联系电话");
-			alert("请输入联系电话");
+		} else if (DB.publisherTextFiled.getValue() == "" || DB.publisherTextFiled.getValue().toLowerCase() == "null") {
+			DoAlert("必须输入发布人！");
 			return;
-		} else if (formpanel.getValues().content == 0) {
-			//alert("请输入联系电话");
-			alert("请输入联系电话");
+		} else if (DB.contactTextFiled.getValue() == "" || DB.contactTextFiled.getValue().toLowerCase() == "null") {
+			DoAlert("必须输入联系方式！");
+			return;
+			} else if (DB.contentTextFiled.getValue() == "" || DB.contentTextFiled.getValue().toLowerCase() == "null") {
+			DoAlert("必须输入详细内容！");
 			return;
 		} else {
-			formpanel.setValues({
-				publishId : systemId
-			});
-			//alert(systemId);
-			formpanel.setUrl(Website.serverUrl + 'publish.jsp');
-			formpanel.submit({
+			DB.contentTextFiled.setValue("联系方式："  + DB.contactTextFiled.getValue() + "<br/>" + "详细内容："  + DB.contentTextFiled.getValue());
+			DB.publishIdTextFiled.setValue(Math.round(new Date().getTime() / 1000));
+			DB.publishMain.setUrl(Website.serverUrl + "publish.jsp");
+			DB.publishMain.submit({
 				waitMsg : {
-					message : '信息发布中...'
+					message : "信息发布中..."
 				},
 				success : function () {
-					alert("成功");
+					DoAlert("发布成功！");
+					DB.titleTextFiled.setValue("");
+					DB.publisherTextFiled.setValue("");
+					DB.contactTextFiled.setValue("");
+					DB.contentTextFiled.setValue("");
+					DB.publishIdTextFiled.setValue("");
 					return;
 				},
 				failure : function () {
-					alert("失败");
+					DoAlert("发布失败！");
 					return;
 				}
 			});

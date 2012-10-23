@@ -8,6 +8,7 @@ Ext.define("Project.controller.widget.resetBtn", {
 			publisherTextFiled : "#publisherTextFiled",
 			contactTextFiled : "#contactTextFiled",
 			contentTextFiled : "#contentTextFiled",
+			publishIdTextFiled : "#publishIdTextFiled",
 		},
 		control : {
 			resetBtn : {
@@ -20,12 +21,14 @@ Ext.define("Project.controller.widget.resetBtn", {
 		DB.publisherTextFiled = this.getPublisherTextFiled();
 		DB.contactTextFiled = this.getContactTextFiled();
 		DB.contentTextFiled = this.getContentTextFiled();
+		DB.publishIdTextFiled = this.getPublishIdTextFiled();
 	},
 	onResetBtnTap : function () {
 		DB.titleTextFiled.setValue("");
 		DB.publisherTextFiled.setValue("");
 		DB.contactTextFiled.setValue("");
 		DB.contentTextFiled.setValue("");
-		Ext.Msg.alert(DB.versionInfo, "表单已重置！");
+		DB.publishIdTextFiled.setValue("");
+		DoAlert("表单已重置！");
 	},
 });

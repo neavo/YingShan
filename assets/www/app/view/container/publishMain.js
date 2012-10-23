@@ -22,6 +22,14 @@ Ext.define("Project.view.container.publishMain", {
 				required : true,
 				placeHolder : "该项为必填项",
 			}, {
+				id : "contactTextFiled",
+				xtype : "textfield",
+				name : "contact",
+				flex : 1,
+				label : "联系方式",
+				required : true,
+				placeHolder : "该项为必填项",
+			}, {
 				id : "contentTextFiled",
 				xtype : "textareafield",
 				name : "content",
@@ -29,15 +37,12 @@ Ext.define("Project.view.container.publishMain", {
 				label : "详细内容",
 				required : true,
 				placeHolder : "该项为必填项"
-			},
-			 {
-	            xtype: 'numberfield',
-            	hidden:true,
-            	minHeight: 0,
-                height:35,
-	            name: 'publishId',
-	            label: '信息编号'
-            }
+			}, {
+				id : "publishIdTextFiled",
+				xtype : "numberfield",
+				hidden : true,
+				name : "publishId",
+			}
 		],
 	},
 });
