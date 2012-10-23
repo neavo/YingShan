@@ -3,7 +3,6 @@
 */
 .mainContainer {
 	background : url(../images/mainBackground.png);
-	background-repeat : repeat-y;
 }
 
 /*
@@ -11,7 +10,6 @@
 */
 .weatherContainer {
 	background : url(../weather/weatherBackground.png);
-	background-repeat : repeat-x;
 }
 .weatherImage {
 	padding-top : 4%;
@@ -21,7 +19,7 @@
 }
 .weatherTextLine {
 	text-align : center;
-	font-size : 1.3em;
+	font-size : 1.2em;
 	padding-top : 6%;
 	color : pink;
 	text-shadow : 1px 0px 0px #FFFFFF, 0px 1px 0px #FFFFFF, -1px 0px 0px #FFFFFF, 0px -1px 0px #FFFFFF;
@@ -177,6 +175,9 @@
 /*
 	信息发布页面样式
 */
+.publishTextFiledLabel .x-form-label {
+	font-size : 3em,
+}
 .publishImageContainer {
 	padding-top : 2em;
 }

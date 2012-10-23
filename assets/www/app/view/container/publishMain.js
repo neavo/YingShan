@@ -11,6 +11,7 @@ Ext.define("Project.view.container.publishMain", {
 				name : "title",
 				flex : 1,
 				label : "标题",
+				labelWidth : "5.5em",
 				required : true,
 				placeHolder : "该项为必填项",
 			}, {
@@ -19,6 +20,7 @@ Ext.define("Project.view.container.publishMain", {
 				name : "publisher",
 				flex : 1,
 				label : "发布人",
+				labelWidth : "5.5em",
 				required : true,
 				placeHolder : "该项为必填项",
 			}, {
@@ -27,6 +29,7 @@ Ext.define("Project.view.container.publishMain", {
 				name : "contact",
 				flex : 1,
 				label : "联系方式",
+				labelWidth : "5.5em",
 				required : true,
 				placeHolder : "该项为必填项",
 			}, {
@@ -35,6 +38,7 @@ Ext.define("Project.view.container.publishMain", {
 				name : "content",
 				flex : 17,
 				label : "详细内容",
+				labelWidth : "5.5em",
 				required : true,
 				placeHolder : "该项为必填项"
 			}, {
