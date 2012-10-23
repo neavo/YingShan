@@ -9,7 +9,7 @@ var Website = {
 
 // 本地数据全局命名空间
 var DB = {
-	versionInfo : "掌上 • 英山 v3.0",
+	versionInfo : "掌上 • 英山 v3.1",
 	activatedController : "", // 正在激活的页面的控制器
 	activatedCategory : "", // 正在激活的页面的频道ID
 	weather : {
