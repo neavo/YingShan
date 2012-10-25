@@ -4,7 +4,7 @@ Ext.define("Project.view.widget.addBtn", {
 	config : {
 		xtype : "button",
 		ui : "plain",
-		iconCls : "action",
+		text : "发布",
 		iconMask : true,
 	},
 });

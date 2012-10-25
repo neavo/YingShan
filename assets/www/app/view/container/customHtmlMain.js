@@ -3,5 +3,6 @@ Ext.define("Project.view.container.customHtmlMain", {
 	xtype : "customHtmlMain",
 	config : {
 		height : DB.screenHeight * 0.84,
+		scrollable : "vertical",
 	},
 });

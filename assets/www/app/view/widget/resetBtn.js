@@ -4,7 +4,7 @@ Ext.define("Project.view.widget.resetBtn", {
 	config : {
 		xtype : "button",
 		ui : "plain",
-		iconCls : "refresh",
+		text : "重置",
 		iconMask : true,
 	},
 });

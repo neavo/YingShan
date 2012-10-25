@@ -39,6 +39,9 @@ Ext.define("Project.controller.widget.addBtn", {
 		} else if (DB.contentTextFiled.getValue() == "" || DB.contentTextFiled.getValue().toLowerCase() == "null") {
 			DoAlert("必须输入详细内容！");
 			return;
+		} else if (document.getElementById("publishImage_1").src != "file:///android_asset/www/resources/icons/defaultImage.png" && document.getElementById("imageStatus_1").innerHTML == "上传中 ...") {
+			DoAlert("请等待图片上传完毕！");
+			return;
 		} else {
 			DB.contentTextFiled.setValue(DB.contentTextFiled.getValue().replace(/\n/g, "</br>"));
 			DB.contentTextFiled.setValue(

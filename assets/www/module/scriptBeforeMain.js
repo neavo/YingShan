@@ -28,9 +28,9 @@ function DoAlert(string) {
 
 // 播放翻页动画
 function DoAnim() {
-	Ext.Anim.run(DB.mainContainer, "slide", {
+	/*Ext.Anim.run(DB.mainContainer, "slide", {
 		out : false,
-	});
+	});*/
 };
 
 // 信息发布页面上传图片控件
