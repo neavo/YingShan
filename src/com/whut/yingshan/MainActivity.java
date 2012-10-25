@@ -62,16 +62,6 @@ public class MainActivity extends DroidGap {
 			e.printStackTrace();
 		}
 	}
-	public void showAbout() {
-		try {
-			localVersion = getVersionName();
-			new AlertDialog.Builder(this).setTitle("¹ØÓÚ").setMessage("ÕÆÉÏÓ¢É½" + localVersion).setPositiveButton("È·¶¨", new DialogInterface.OnClickListener() {
-				public void onClick(DialogInterface dialog, int which) {}
-			}).show();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 	private String getVersionName()throws Exception {
 		PackageManager packageManager = getPackageManager();
 		PackageInfo packInfo = packageManager.getPackageInfo(getPackageName(), 0);
@@ -89,17 +79,17 @@ public class MainActivity extends DroidGap {
 				if (firstCheckUpdate && (info.getVersion().compareTo(localVersion) <= 0)) {
 					firstCheckUpdate = false;
 				} else if (firstCheckUpdate && (info.getVersion().compareTo(localVersion) > 0)) {
-					Log.i(TAG, "¼ì²âµ½´ó°æ±¾ºÅ ,ÌáÊ¾ÓÃ»§Éı¼¶ ");
+					Log.i(TAG, "æ£€æµ‹åˆ°å¤§ç‰ˆæœ¬å· ,æç¤ºç”¨æˆ·å‡çº§ ");
 					Message msg = new Message();
 					msg.what = UPDATA_CLIENT;
 					handler.sendMessage(msg);
 				} else if (!firstCheckUpdate && (info.getVersion().compareTo(localVersion) <= 0)) {
-					Log.i(TAG, "°æ±¾ºÅÏàÍ¬ÎŞĞèÉı¼¶");
+					Log.i(TAG, "ç‰ˆæœ¬å·ç›¸åŒæ— éœ€å‡çº§");
 					Message msg = new Message();
 					msg.what = UPDATA_NONEED;
 					handler.sendMessage(msg);
 				} else {
-					Log.i(TAG, "¼ì²âµ½´ó°æ±¾ºÅ,ÌáÊ¾ÓÃ»§Éı¼¶ ");
+					Log.i(TAG, "æ£€æµ‹åˆ°å¤§ç‰ˆæœ¬å·,æç¤ºç”¨æˆ·å‡çº§ ");
 					Message msg = new Message();
 					msg.what = UPDATA_CLIENT;
 					handler.sendMessage(msg);
@@ -118,34 +108,34 @@ public class MainActivity extends DroidGap {
 			super.handleMessage(msg);
 			switch (msg.what) {
 			case UPDATA_NONEED:
-				Toast.makeText(getApplicationContext(), "ÄúµÄÈí¼şÒÑ¾­ÊÇ×îĞÂ°æ", Toast.LENGTH_SHORT).show();
+				Toast.makeText(getApplicationContext(), "æ‚¨çš„è½¯ä»¶å·²ç»æ˜¯æœ€æ–°ç‰ˆ", Toast.LENGTH_SHORT).show();
 				break;
 			case UPDATA_CLIENT:
 				showUpdataDialog();
 				break;
 			case GET_UNDATAINFO_ERROR:
-				Toast.makeText(getApplicationContext(), "»ñÈ¡·şÎñÆ÷¸üĞÂĞÅÏ¢Ê§°Ü", 1).show();
+				Toast.makeText(getApplicationContext(), "è·å–æœåŠ¡å™¨æ›´æ–°ä¿¡æ¯å¤±è´¥", 1).show();
 				break;
 			case SDCARD_NOMOUNTED:
-				Toast.makeText(getApplicationContext(), "SD¿¨²»¿ÉÓÃ", 1).show();
+				Toast.makeText(getApplicationContext(), "SDå¡ä¸å¯ç”¨", 1).show();
 				break;
 			case DOWN_ERROR:
-				Toast.makeText(getApplicationContext(), "ÏÂÔØĞÂ°æ±¾Ê§°Ü", 1).show();
+				Toast.makeText(getApplicationContext(), "ä¸‹è½½æ–°ç‰ˆæœ¬å¤±è´¥", 1).show();
 				break;
 			}
 		}
 	};
 	protected void showUpdataDialog() {
 		AlertDialog.Builder builer = new Builder(this);
-		builer.setTitle("°æ±¾Éı¼¶");
+		builer.setTitle("ç‰ˆæœ¬å‡çº§");
 		builer.setMessage(info.getDescription());
-		builer.setPositiveButton("È·¶¨", new DialogInterface.OnClickListener() {
+		builer.setPositiveButton("ç¡®å®š", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
-				Log.i(TAG, "ÏÂÔØapk,¸üĞÂ");
+				Log.i(TAG, "ä¸‹è½½apk,æ›´æ–°");
 				downLoadApk();
 			}
 		});
-		builer.setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+		builer.setNegativeButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {}
 			
 		});
@@ -156,7 +146,7 @@ public class MainActivity extends DroidGap {
 		final ProgressDialog pd;
 		pd = new ProgressDialog(MainActivity.this);
 		pd.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-		pd.setMessage("ÕıÔÚÏÂÔØ¸üĞÂ");
+		pd.setMessage("æ­£åœ¨ä¸‹è½½æ›´æ–°");
 		if (!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
 			Message msg = new Message();
 			msg.what = SDCARD_NOMOUNTED;
