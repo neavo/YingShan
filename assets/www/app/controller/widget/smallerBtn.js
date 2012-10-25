@@ -13,7 +13,7 @@ Ext.define("Project.controller.widget.smallerBtn", {
 	onSmallerBtnTap : function () {
 		switch (DB.scaleFlag) {
 		case -2 :
-			Ext.Msg.alert(DB.versionInfo, "当前已缩放至最小！");
+			DoAlert("当前已缩放至最小！");
 			break;
 		case -1 :
 			DB.infoDetailMain.setHtml(DB.infoDetailMain.getHtml().replace("infoDetailContentSmall", "infoDetailContentSmaller"));

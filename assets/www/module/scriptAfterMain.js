@@ -1,17 +1,17 @@
-// 播放翻页动画
-function DoAnim() {
-	Ext.Anim.run(DB.mainContainer, "slide", {
-		out : false,
-	});
-};
-
 // PhoneGap
+var pictureSource; // picture source
+var destinationType; // sets the format of returned value
 {
 	document.addEventListener("deviceready", onDeviceReady, false);
 	function onDeviceReady() {
+		
 		// PhoneGap加载完毕以后干掉启动闪屏
 		cordova.exec(null, null, "SplashScreen", "hide", []);
 		document.addEventListener("backbutton", onBackButtonTap, false);
+		
+		// 拍照相关参数
+		pictureSource = navigator.camera.PictureSourceType;
+		destinationType = navigator.camera.DestinationType;
 	};
 	function onBackButtonTap() {
 		DB.activatedController.goBack();

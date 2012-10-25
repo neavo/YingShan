@@ -11,6 +11,6 @@ Ext.define("Project.controller.widget.updateBtn", {
 		},
 	},
 	onUpdateBtnTap : function () {
-		Ext.Msg.alert(DB.versionInfo, "当前已是最新版本！");
+		DoAlert("当前已是最新版本！");
 	},
 });

@@ -17,7 +17,7 @@ Ext.define("Project.controller.widget.prevBtn", {
 			currInfoPageNum = currInfoPageNum - 1;
 			Ext.getStore("mainStore").setProxy({
 				type : "jsonp",
-				url : Website.serverUrl + Website.infoScriptUrl + DB.activatedCategory + "&infoPageNum=" + currInfoPageNum,
+				url : Website.serverUrl + "Server/info.jsp?categoryid=" + DB.activatedCategory + "&infoPageNum=" + currInfoPageNum,
 			});
 			Ext.getStore("mainStore").load();
 		};

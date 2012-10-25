@@ -36,16 +36,44 @@ Ext.define("Project.view.container.publishMain", {
 				id : "contentTextFiled",
 				xtype : "textareafield",
 				name : "content",
-				flex : 17,
+				flex : 8.5,
 				label : "详细内容",
 				labelWidth : "5.5em",
 				required : true,
 				placeHolder : "该项为必填项"
 			}, {
+				xtype : "container",
+				flex : 8.5,
+				cls : "publishImageContainer",
+				layout : "hbox",
+				items : [{
+						xtype : "spacer",
+					}, {
+						xtype : "container",
+						html : "<img id = publishImage_1 class = publishImage src = resources/icons/defaultImage.png>"
+						 + "<div id = imageStatus_1 class = publishImageStatus >点击添加</div>",
+						listeners : {
+							tap : {
+								fn : function () {
+									DoGetPhoto("1");
+								},
+								element : "element",
+							},
+						},
+					}, {
+						xtype : "spacer",
+					},
+				],
+			}, {
 				id : "publishIdTextFiled",
 				xtype : "numberfield",
 				hidden : true,
 				name : "publishId",
+			}, {
+				id : "categoryIdTextFiled",
+				xtype : "numberfield",
+				hidden : true,
+				name : "categoryId",
 			}
 		],
 	},

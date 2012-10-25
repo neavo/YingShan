@@ -175,15 +175,17 @@
 /*
 	信息发布页面样式
 */
-.publishTextFiledLabel .x-form-label {
-	font-size : 3em,
-}
 .publishImageContainer {
-	padding-top : 2em;
+	background : #FFFFFF;
 }
 .publishImage {
-	max-width : 5em;
-	max-height : 5em;
+	max-width : 10em;
+	max-height : 4.5em;
 	display : block;
 	margin : auto;
+}
+.publishImageStatus {
+	text-align : center;
+    font-size : 0.8em;
+    color : #808080;
 }

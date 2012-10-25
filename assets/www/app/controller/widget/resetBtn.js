@@ -29,6 +29,9 @@ Ext.define("Project.controller.widget.resetBtn", {
 		DB.contactTextFiled.setValue("");
 		DB.contentTextFiled.setValue("");
 		DB.publishIdTextFiled.setValue("");
+		DB.categoryIdTextFiled.setValue("");
+		document.getElementById("publishImage_1").src = "resources/icons/defaultImage.png";
+		document.getElementById("imageStatus_1").innerHTML = "点击添加";
 		DoAlert("表单已重置！");
 	},
 });

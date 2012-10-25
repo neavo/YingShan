@@ -29,7 +29,7 @@ Ext.define("Project.controller.container.childCategoryMain", {
 		DB.infoListTop.setTitle(title);
 		DB.infoListMain.getStore().setProxy({
 			type : "jsonp",
-			url : Website.serverUrl + Website.infoScriptUrl + DB.activatedCategory + "&infoPageNum=1",
+			url : Website.serverUrl + "Server/info.jsp?categoryid=" + DB.activatedCategory + "&infoPageNum=1",
 		});
 		DB.infoListMain.getStore().load();
 		setActivatedController(this.getApplication().getController("infoList"));
@@ -48,7 +48,7 @@ Ext.define("Project.controller.container.childCategoryMain", {
 		setActivatedController(this.getApplication().getController("customHtml"));
 	},
 	// 发布信息页面
-	setPublishView : function (title) {
+	setPublishView : function (id, title) {
 		DoAnim();
 		DB.childCategoryTop.hide();
 		DB.childCategoryMain.hide();
@@ -57,6 +57,9 @@ Ext.define("Project.controller.container.childCategoryMain", {
 		DB.publishMain.show();
 		DB.publishBottom.show();
 		DB.publishTop.setTitle(title);
+		setActivatedCategory(id);
+		DB.categoryIdTextFiled.setValue(DB.activatedCategory);
+		DB.publishIdTextFiled.setValue(Math.round(new Date().getTime() / 1000));
 		setActivatedController(this.getApplication().getController("publishView"));
 	},
 	// 响应按键点击
@@ -67,7 +70,7 @@ Ext.define("Project.controller.container.childCategoryMain", {
 		} else if (data.categoryStyle == "customHtml") {
 			this.setCustomView(data.customHtml, data.categoryTitle);	
 		} else if (data.categoryStyle == "publishPanel") {
-			this.setPublishView(data.categoryTitle);
+			this.setPublishView(data.categoryId, data.categoryTitle);
 		} else {
 			this.setActivatedView(data.categoryId, data.categoryTitle);
 		};

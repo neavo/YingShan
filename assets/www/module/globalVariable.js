@@ -1,15 +1,14 @@
 // 服务器相关参数
 var Website = {
 	// 发布服务器地址
-	serverUrl : "http://221.235.190.14:8080/YingShanServer/Server/",
+	serverUrl : "http://221.235.190.14:8080/YingShanServer/",
 	// 开发服务器地址
-	//serverUrl : "http://59.69.65.180:8080/YingShanServer/Server/",
-	infoScriptUrl : "info.jsp?categoryid=",
+	//serverUrl : "http://59.69.65.180:8080/YingShanServer/",
 };
 
 // 本地数据全局命名空间
 var DB = {
-	versionInfo : "掌上 • 英山 v3.1",
+	versionInfo : "掌上 • 英山 v3.2",
 	activatedController : "", // 正在激活的页面的控制器
 	activatedCategory : "", // 正在激活的页面的频道ID
 	weather : {
@@ -214,18 +213,54 @@ var Category = [{
 				categoryTitle : "茶技推广",
 				categoryIconUrl : "resources/icons/03.png",
 			}, {
-				categoryId : "433",
-				categoryTitle : "供求信息",
+				categoryTitle : "供应信息",
 				categoryIconUrl : "resources/icons/03.png",
+				categoryStyle : "parentCategory",
+				childCategory : [{
+						categoryId : "433",
+						categoryTitle : "查看供应信息",
+						categoryIconUrl : "resources/icons/03.png",
+					}, {
+						categoryTitle : "发布供应信息",
+						categoryIconUrl : "resources/icons/03.png",
+						categoryStyle : "publishPanel",
+						categoryId : "433",
+					},
+				],
 			}, {
-				categoryTitle : "发布供求",
+				categoryTitle : "求购信息",
 				categoryIconUrl : "resources/icons/03.png",
-				categoryStyle : "publishPanel",
-				targetCategoryId : "433",
+				categoryStyle : "parentCategory",
+				childCategory : [{
+						categoryId : "462",
+						categoryTitle : "查看求购信息",
+						categoryIconUrl : "resources/icons/03.png",
+					}, {
+						categoryTitle : "发布求购信息",
+						categoryIconUrl : "resources/icons/03.png",
+						categoryStyle : "publishPanel",
+						categoryId : "462",
+					},
+				],
 			}, {
 				categoryId : "434",
 				categoryTitle : "专家在线",
 				categoryIconUrl : "resources/icons/03.png",
+				categoryStyle : "parentCategory",
+				childCategory : [{
+						categoryId : "434",
+						categoryTitle : "问题列表",
+						categoryIconUrl : "resources/icons/03.png",
+					}, {
+						categoryTitle : "在线提问",
+						categoryIconUrl : "resources/icons/03.png",
+						categoryStyle : "publishPanel",
+						categoryId : "434",
+					}, /*{
+						categoryTitle : "联系专家",
+						categoryIconUrl : "resources/icons/03.png",
+					},*/
+				],
 			},
 		],
 	}, {
@@ -247,6 +282,7 @@ var Category = [{
 			}, {
 				categoryTitle : "旅游服务",
 				categoryIconUrl : "resources/icons/04.png",
+				categoryStyle : "parentCategory",
 				childCategory : [{
 						categoryId : "438",
 						categoryTitle : "吃在英山",
@@ -317,7 +353,7 @@ var Category = [{
 		],
 	}, {
 		categoryId : "",
-		categoryTitle : "医疗",
+		categoryTitle : "卫生",
 		categoryIconUrl : "resources/icons/07.png",
 		categoryStyle : "parentCategory",
 		childCategory : [{
