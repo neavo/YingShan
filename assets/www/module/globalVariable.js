@@ -8,7 +8,7 @@ var Website = {
 
 // 本地数据全局命名空间
 var DB = {
-	versionInfo : "掌上 • 英山 v3.4",
+	versionInfo : "掌上 • 英山 v3.5",
 	activatedController : "", // 正在激活的页面的控制器
 	activatedCategory : "", // 正在激活的页面的频道ID
 	weather : {
@@ -81,6 +81,10 @@ var Category = [{
 					}, {
 						categoryId : "409",
 						categoryTitle : "神州大地英山人",
+						categoryIconUrl : "resources/icons/01.png",
+					}, {
+						categoryId : "463",
+						categoryTitle : "聚焦开发区",
 						categoryIconUrl : "resources/icons/01.png",
 					},
 				],
@@ -268,19 +272,15 @@ var Category = [{
 		categoryIconUrl : "resources/icons/04.png",
 		categoryStyle : "parentCategory",
 		childCategory : [{
-				categoryId : "435",
-				categoryTitle : "旅游动态",
-				categoryIconUrl : "resources/icons/04.png",
-			}, {
 				categoryId : "436",
 				categoryTitle : "景点介绍",
 				categoryIconUrl : "resources/icons/04.png",
 			}, {
 				categoryId : "437",
-				categoryTitle : "旅游指南",
+				categoryTitle : "旅游信息",
 				categoryIconUrl : "resources/icons/04.png",
 			}, {
-				categoryTitle : "旅游服务",
+				categoryTitle : "服务咨询",
 				categoryIconUrl : "resources/icons/04.png",
 				categoryStyle : "parentCategory",
 				childCategory : [{

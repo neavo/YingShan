@@ -29,7 +29,7 @@ function DoAlert(string) {
 // 播放翻页动画
 function DoAnim() {
 	/*Ext.Anim.run(DB.mainContainer, "slide", {
-		out : false,
+	out : false,
 	});*/
 };
 
@@ -37,14 +37,16 @@ function DoAnim() {
 function DoGetPhoto(imageId) {
 	navigator.camera.getPicture(function (url) {
 		document.getElementById("publishImage_" + imageId).src = url;
-		DoPublish(imageId, DB.publishIdTextFiled.getValue()); 	// 上传图片
+		DoPublish(imageId, DB.publishIdTextFiled.getValue()); // 上传图片
 		document.getElementById("imageStatus_" + imageId).innerHTML = "上传中 ...";
 	}, function () {
 		return;
 	}, {
-		quality : 50,
+		quality : 75,
 		destinationType : destinationType.FILE_URI,
-		sourceType : pictureSource.PHOTOLIBRARY,
+		//sourceType : pictureSource.PHOTOLIBRARY,
+		targetWidth : 450,
+		targetHeight : 450,
 	});
 };
 // 信息发布,上传图片
