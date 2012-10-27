@@ -5,13 +5,7 @@ Ext.define("Project.controller.infoDetail", {
 		control : {},
 	},
 	goBack : function () {
-		DoAnim();
-		DB.infoDetailTop.hide();
-		DB.infoDetailMain.hide();
-		DB.infoDetailBottom.hide();
-		DB.infoListTop.show();
-		DB.infoListMain.show();
-		DB.infoListBottom.show();
+		DoSwitch("infoDetail", "infoList");
 		setActivatedController(this.getApplication().getController("infoList"));
 	},
 });

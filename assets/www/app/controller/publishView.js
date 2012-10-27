@@ -5,13 +5,7 @@ Ext.define("Project.controller.publishView", {
 		control : {},
 	},
 	goBack : function () {
-		DoAnim();
-		DB.publishTop.hide();
-		DB.publishMain.hide();
-		DB.publishBottom.hide();
-		DB.childCategoryTop.show();
-		DB.childCategoryMain.show();
-		DB.childCategoryBottom.show();
+		DoSwitch("publish", "childCategory");
 		DB.titleTextFiled.setValue("");
 		DB.publisherTextFiled.setValue("");
 		DB.contactTextFiled.setValue("");

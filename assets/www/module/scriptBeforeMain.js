@@ -26,6 +26,16 @@ function DoAlert(string) {
 	});
 };
 
+// 翻页
+function DoSwitch(thisView, nextView) {
+	DB[thisView + "Top"].hide();
+	DB[thisView + "Main"].hide();
+	DB[thisView + "Bottom"].hide();
+	DB[nextView + "Top"].show();
+	DB[nextView + "Main"].show();
+	DB[nextView + "Bottom"].show();
+};
+
 // 播放翻页动画
 function DoAnim() {
 	/*Ext.Anim.run(DB.mainContainer, "slide", {

@@ -12,13 +12,7 @@ Ext.define("Project.controller.container.infoListMain", {
 	},
 	// 点击列表条目
 	onInfoListMainItemTap : function (list, index, e, eOpts) {
-		DoAnim();
-		DB.infoListTop.hide();
-		DB.infoListMain.hide();
-		DB.infoListBottom.hide();
-		DB.infoDetailTop.show();
-		DB.infoDetailMain.show();
-		DB.infoDetailBottom.show();
+		DoSwitch("infoList", "infoDetail");
 		if (list.getStore().getAt(index).get("videourl") != "" && list.getStore().getAt(index).get("videourl").toLowerCase() != "null") {
 			DB.videoUrl = list.getStore().getAt(index).get("videourl");
 			DB.scaleFlag = 0;

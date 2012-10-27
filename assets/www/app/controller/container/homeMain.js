@@ -23,9 +23,10 @@ Ext.define("Project.controller.container.homeMain", {
 			adCarousel.setActiveItem(t);
 		}, 5000);
 	},
-	createHContainer : function (container)
-	{
-		var hContainer = Ext.create("Ext.Container", { layout : "hbox" });
+	createHContainer : function (container) {
+		var hContainer = Ext.create("Ext.Container", {
+				layout : "hbox"
+			});
 		container.add(hContainer);
 		hContainer.add(Ext.create("Ext.Spacer"));
 		return hContainer
@@ -48,16 +49,10 @@ Ext.define("Project.controller.container.homeMain", {
 					categoryTitle : Category[key]["categoryTitle"],
 					childCategory : Category[key]["childCategory"],
 					setChildView : function (parent, childCategory, title) {
-						DoAnim();
-						DB.homeTop.hide();
-						DB.homeMain.hide();
-						DB.homeBottom.hide();
-						DB.childCategoryTop.show();
-						DB.childCategoryMain.show();
-						DB.childCategoryBottom.show();
+						DoSwitch("home", "childCategory");
 						DB.childCategoryTop.setTitle(title);
 						DB.childCategoryMain.getStore().setData(childCategory);
-						setActivatedController(parent.getApplication().getController("childCategory"));						
+						setActivatedController(parent.getApplication().getController("childCategory"));
 					},
 					listeners : {
 						tap : {

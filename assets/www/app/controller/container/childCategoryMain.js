@@ -12,19 +12,12 @@ Ext.define("Project.controller.container.childCategoryMain", {
 	},
 	// 有子频道
 	setChildView : function (childCategory, title) {
-		DoAnim();
 		DB.childCategoryTop.setTitle(title);
 		DB.childCategoryMain.getStore().setData(childCategory);
 	},
 	// 无子频道
 	setActivatedView : function (id, title) {
-		DoAnim();
-		DB.childCategoryTop.hide();
-		DB.childCategoryMain.hide();
-		DB.childCategoryBottom.hide();
-		DB.infoListTop.show();
-		DB.infoListMain.show();
-		DB.infoListBottom.show();
+		DoSwitch("childCategory", "infoList");
 		setActivatedCategory(id);
 		DB.infoListTop.setTitle(title);
 		DB.infoListMain.getStore().setProxy({
@@ -36,26 +29,14 @@ Ext.define("Project.controller.container.childCategoryMain", {
 	},
 	// 自定义网页页面
 	setCustomView : function (html, title) {
-		DoAnim();
-		DB.childCategoryTop.hide();
-		DB.childCategoryMain.hide();
-		DB.childCategoryBottom.hide();
-		DB.customHtmlTop.show();
-		DB.customHtmlMain.show();
-		DB.customHtmlBottom.show();
+		DoSwitch("childCategory", "customHtml");
 		DB.customHtmlTop.setTitle(title);
 		DB.customHtmlMain.setHtml(html);
 		setActivatedController(this.getApplication().getController("customHtml"));
 	},
 	// 发布信息页面
 	setPublishView : function (id, title) {
-		DoAnim();
-		DB.childCategoryTop.hide();
-		DB.childCategoryMain.hide();
-		DB.childCategoryBottom.hide();
-		DB.publishTop.show();
-		DB.publishMain.show();
-		DB.publishBottom.show();
+		DoSwitch("childCategory", "publish");
 		DB.publishTop.setTitle(title);
 		setActivatedCategory(id);
 		DB.categoryIdTextFiled.setValue(DB.activatedCategory);
@@ -68,9 +49,11 @@ Ext.define("Project.controller.container.childCategoryMain", {
 		if (data.categoryStyle == "parentCategory") {
 			this.setChildView(data.childCategory, data.categoryTitle);
 		} else if (data.categoryStyle == "customHtml") {
-			this.setCustomView(data.customHtml, data.categoryTitle);	
+			this.setCustomView(data.customHtml, data.categoryTitle);
 		} else if (data.categoryStyle == "publishPanel") {
 			this.setPublishView(data.categoryId, data.categoryTitle);
+		} else if (data.categoryStyle == "webUrl") {
+			window.open(data.webUrl, "_blank");
 		} else {
 			this.setActivatedView(data.categoryId, data.categoryTitle);
 		};

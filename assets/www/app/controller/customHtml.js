@@ -5,13 +5,7 @@ Ext.define("Project.controller.customHtml", {
 		control : {},
 	},
 	goBack : function () {
-		DoAnim();
-		DB.customHtmlTop.hide();
-		DB.customHtmlMain.hide();
-		DB.customHtmlBottom.hide();
-		DB.childCategoryTop.show();
-		DB.childCategoryMain.show();
-		DB.childCategoryBottom.show();
+		DoSwitch("customHtml", "childCategory");
 		setActivatedController(this.getApplication().getController("childCategory"));
 	},
 });

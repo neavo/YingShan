@@ -5,13 +5,7 @@ Ext.define("Project.controller.childCategory", {
 		control : {},
 	},
 	goBack : function () {
-		DoAnim();
-		DB.childCategoryTop.hide();
-		DB.childCategoryMain.hide();
-		DB.childCategoryBottom.hide();
-		DB.homeTop.show();
-		DB.homeMain.show();
-		DB.homeBottom.show();
+		DoSwitch("childCategory", "home");
 		setActivatedController(this.getApplication().getController("homeView"));
 	},
 });

@@ -189,3 +189,6 @@
     font-size : 0.8em;
     color : #808080;
 }
+.publishTextField input::-webkit-input-placeholder {  
+	color : #2e4bc5;  
+}  

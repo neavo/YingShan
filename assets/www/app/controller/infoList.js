@@ -5,13 +5,7 @@ Ext.define("Project.controller.infoList", {
 		control : {},
 	},
 	goBack : function () {
-		DoAnim();
-		DB.infoListTop.hide();
-		DB.infoListMain.hide();
-		DB.infoListBottom.hide();
-		DB.childCategoryTop.show();
-		DB.childCategoryMain.show();
-		DB.childCategoryBottom.show();
+		DoSwitch("infoList", "childCategory");
 		setActivatedController(this.getApplication().getController("childCategory"));
 	},
 });

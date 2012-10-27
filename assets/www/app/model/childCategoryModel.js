@@ -8,6 +8,7 @@ Ext.define("Project.model.childCategoryModel", {
 			"categoryStyle",
 			"customHtml",
 			"childCategory",
+			"webUrl",
 		],
 	},
 });
