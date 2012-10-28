@@ -39,7 +39,7 @@ Ext.define("Project.controller.widget.addBtn", {
 		} else if (DB.contentTextFiled.getValue() == "" || DB.contentTextFiled.getValue().toLowerCase() == "null") {
 			DoAlert("必须输入详细内容！");
 			return;
-		} else if (document.getElementById("publishImage_1").src != "file:///android_asset/www/resources/icons/defaultImage.png" && document.getElementById("imageStatus_1").innerHTML == "上传中 ...") {
+		} else if (document.getElementById("publishImage").src != "file:///android_asset/www/resources/icons/defaultImage.png" && document.getElementById("imageStatus").innerHTML == "上传中 ...") {
 			DoAlert("请等待图片上传完毕！");
 			return;
 		} else {
@@ -47,7 +47,7 @@ Ext.define("Project.controller.widget.addBtn", {
 			DB.contentTextFiled.setValue(
 				"联系方式：" + DB.contactTextFiled.getValue() + "<br/>"
 				 + "详细内容：" + DB.contentTextFiled.getValue());
-			if (document.getElementById("publishImage_1").src != "file:///android_asset/www/resources/icons/defaultImage.png" && document.getElementById("imageStatus_1").innerHTML == "上传成功！") {
+			if (document.getElementById("publishImage").src != "file:///android_asset/www/resources/icons/defaultImage.png" && document.getElementById("imageStatus").innerHTML == "上传成功！") {
 				DB.contentTextFiled.setValue(
 					DB.contentTextFiled.getValue() + "</br></br>"
 					 + "<img style = \" max-width : 300px; max-height : 300px; display : block; margin : auto; \" src = " + Website.serverUrl + "upload/image/QA/" + DB.publishIdTextFiled.getValue() + "/1 />");
@@ -65,8 +65,8 @@ Ext.define("Project.controller.widget.addBtn", {
 					DB.contentTextFiled.setValue("");
 					DB.publishIdTextFiled.setValue("");
 					DB.categoryIdTextFiled.setValue("");
-					document.getElementById("publishImage_1").src = "resources/icons/defaultImage.png";
-					document.getElementById("imageStatus_1").innerHTML = "点击添加";
+					document.getElementById("publishImage").src = "resources/icons/defaultImage.png";
+					document.getElementById("imageStatus").innerHTML = "点击添加";
 					return;
 				},
 				failure : function () {
@@ -76,8 +76,8 @@ Ext.define("Project.controller.widget.addBtn", {
 					DB.contentTextFiled.setValue("");
 					DB.publishIdTextFiled.setValue("");
 					DB.categoryIdTextFiled.setValue("");
-					document.getElementById("publishImage_1").src = "resources/icons/defaultImage.png";
-					document.getElementById("imageStatus_1").innerHTML = "点击添加";
+					document.getElementById("publishImage").src = "resources/icons/defaultImage.png";
+					document.getElementById("imageStatus").innerHTML = "点击添加";
 					DoAlert("发布失败！");
 					return;
 				}

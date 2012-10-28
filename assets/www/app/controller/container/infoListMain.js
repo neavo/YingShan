@@ -10,7 +10,37 @@ Ext.define("Project.controller.container.infoListMain", {
 			},
 		},
 	},
-	// 点击列表条目
+	launch : function () {
+		DB.infoListMain.getScrollable().getScroller().on("scrollend", function (scroller, x, y) {
+			if (y <= scroller.minPosition.y) {
+				if (currInfoPageNum == 1) {
+					Ext.Msg.alert(DB.versionInfo, "已是第一页！");
+				} else {
+					currInfoPageNum = currInfoPageNum - 1;
+					Ext.getStore("mainStore").setProxy({
+						type : "jsonp",
+						url : Website.serverUrl + "Server/info.jsp?categoryid=" + DB.activatedCategory + "&infoPageNum=" + currInfoPageNum,
+					});
+					Ext.getStore("mainStore").load();
+				};
+			} else if (y >= scroller.maxPosition.y) {
+				currInfoPageNum = currInfoPageNum + 1;
+				Ext.getStore("mainStore").setProxy({
+					type : "jsonp",
+					url : Website.serverUrl + "Server/info.jsp?categoryid=" + DB.activatedCategory + "&infoPageNum=" + currInfoPageNum,
+				});
+				Ext.getStore("mainStore").load({
+					callback : function (records, operation, success, eOpts) {
+						if (records.length == 0) {
+							currInfoPageNum = lastInfoPageNum + 1;
+						} else {
+							lastInfoPageNum = currInfoPageNum;
+						};
+					},
+				});
+			};
+		});
+	},
 	onInfoListMainItemTap : function (list, index, e, eOpts) {
 		DoSwitch("infoList", "infoDetail");
 		if (list.getStore().getAt(index).get("videourl") != "" && list.getStore().getAt(index).get("videourl").toLowerCase() != "null") {

@@ -8,6 +8,7 @@ import java.net.URL;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -17,6 +18,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Menu;
 import android.widget.Toast;
@@ -33,9 +35,34 @@ public class MainActivity extends DroidGap {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
+		/*
+		 * 非屏蔽版
+		 */
 		super.setIntegerProperty("splashscreen", R.drawable.splashscreen);
 		super.loadUrl("file:///android_asset/www/index.html", 10000);
 		update();
+		 
+		
+		/*
+		 * 屏蔽版
+		 *
+		TelephonyManager tm = (TelephonyManager)this.getSystemService(Context.TELEPHONY_SERVICE);
+		String imsi = tm.getSubscriberId();
+		if (imsi != null && imsi.startsWith("46003")) {
+			super.setIntegerProperty("splashscreen", R.drawable.splashscreen);
+			super.loadUrl("file:///android_asset/www/index.html", 10000);
+			update();
+		} else {
+			new AlertDialog.Builder(this)
+			.setTitle("温馨提示")
+			.setMessage("本软件为中国电信定制，请使用中国电信手机号码登陆！")
+			.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog, int which) {
+					android.os.Process.killProcess(android.os.Process.myPid());
+				}
+			})
+			.show();
+		}*/
 	}
 	
 	 @ Override

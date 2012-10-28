@@ -4,7 +4,6 @@ Ext.define("Project.view.widget.prevBtn", {
 	config : {
 		xtype : "button",
 		ui : "plain",
-		iconCls : "arrow_left",
-		iconMask : true,
+		text : "上一页",
 	},
 });

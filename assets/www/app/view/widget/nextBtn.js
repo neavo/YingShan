@@ -4,7 +4,6 @@ Ext.define("Project.view.widget.nextBtn", {
 	config : {
 		xtype : "button",
 		ui : "plain",
-		iconCls : "arrow_right",
-		iconMask : true,
+		text : "下一页",
 	},
 });

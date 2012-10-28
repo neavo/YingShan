@@ -125,6 +125,12 @@
 	padding-left : 1.2em;
 	overflow : hidden;
 }
+.infoListMainHtml {
+	margin-top : 0.2em;
+	text-align : center;
+	font-size : 0.8em;
+	color :  #808080;
+}
 
 /*
 	信息详细视图样式

@@ -12,5 +12,12 @@ Ext.define("Project.view.container.infoListMain", {
 		 + "<div class = infoListTitle><b>{title}</b></div>"
 		 + "<div class = infoListData>{datetime}</div>"
 		 + "<div class = infoListPubliser>{publisher}</div>",
+		items : [{
+				xtype : "container",
+				height : "1.3em",
+				docked : "bottom",
+				html : "<div class = infoListMainHtml> 下滑显示更多 </div>",
+			},
+		],
 	},
 });

@@ -47,8 +47,8 @@ Ext.define("Project.view.container.publishMain", {
 						xtype : "spacer",
 					}, {
 						xtype : "container",
-						html : "<img id = publishImage_1 class = publishImage src = resources/icons/defaultImage.png>"
-						 + "<div id = imageStatus_1 class = publishImageStatus >点击添加</div>",
+						html : "<img id = publishImage class = publishImage src = resources/icons/defaultImage.png>"
+						 + "<div id = imageStatus class = publishImageStatus >点击添加</div>",
 						listeners : {
 							tap : {
 								fn : function () {

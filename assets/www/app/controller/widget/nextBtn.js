@@ -22,8 +22,8 @@ Ext.define("Project.controller.widget.nextBtn", {
 					currInfoPageNum = lastInfoPageNum + 1;
 				} else {
 					lastInfoPageNum = currInfoPageNum;
-				}
-			}
+				};
+			},
 		});
 	},
 });

@@ -12,8 +12,8 @@ Ext.define("Project.controller.publishView", {
 		DB.contentTextFiled.setValue("");
 		DB.publishIdTextFiled.setValue("");
 		DB.categoryIdTextFiled.setValue("");
-		document.getElementById("publishImage_1").src = "resources/icons/defaultImage.png";
-		document.getElementById("imageStatus_1").innerHTML = "点击添加";
+		document.getElementById("publishImage").src = "resources/icons/defaultImage.png";
+		document.getElementById("imageStatus").innerHTML = "点击添加";
 		setActivatedController(this.getApplication().getController("childCategory"));
 	},
 });
