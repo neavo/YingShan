@@ -3,8 +3,10 @@ Ext.application({
 	
 	requires : [
 		"Ext.MessageBox",
+		"Ext.field.Number",
 		"Ext.dataview.List",
 		"Ext.data.proxy.JsonP",
+		"Ext.carousel.Carousel",
 	],
 	
 	models : [
@@ -31,7 +33,7 @@ Ext.application({
 	],
 	
 	controllers : [
-		"init",
+		"mainController",
 		"widget.backBtn", "widget.updateBtn", "widget.aboutBtn", "widget.prevBtn",
 		"widget.nextBtn", "widget.homeBtn", "widget.biggerBtn", "widget.smallerBtn",
 		"widget.addBtn", "widget.resetBtn",
@@ -41,7 +43,7 @@ Ext.application({
 		"homeView", "childCategory", "infoList", "infoDetail",
 		"customHtml", "publishView",
 	],
-
+	
 	launch : function () {
 		Ext.Viewport.add(Ext.create("Project.view.mainContainer"));
 	},

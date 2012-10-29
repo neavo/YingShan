@@ -17,8 +17,6 @@ var DB = {
 		low : "10",
 		high : "20",
 	},
-	screenHeight : 0, // 屏幕高度
-	screenWidth : 0, // 屏幕宽度
 	videoUrl : "", // 要播放的视频的url
 	scaleFlag : 0, // 详细信息页面缩放Flag
 };

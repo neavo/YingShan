@@ -3,26 +3,23 @@
 */
 .mainContainer {
 	background : url(../images/mainBackground.png);
+	background : #FFFFFF;
 }
 
 /*
 	天气样式
 */
-.weatherContainer {
-	background : url(../weather/weatherBackground.png);
-}
 .weatherImage {
-	padding-top : 4%;
+	padding-top : 3%;
 	padding-left : 3%;
-	max-height : 80%;
+	max-height : 2em;
 	float : left;
 }
 .weatherTextLine {
 	text-align : center;
-	font-size : 1.2em;
-	padding-top : 6%;
-	color : pink;
-	text-shadow : 1px 0px 0px #FFFFFF, 0px 1px 0px #FFFFFF, -1px 0px 0px #FFFFFF, 0px -1px 0px #FFFFFF;
+	font-size : 1.1em;
+	padding-top : 4%;
+	color : white;
 }
 
 /*
@@ -44,12 +41,6 @@
 /*
 	导航列表样式
 */
-.categoryContainer {
-	padding-top : 2%;
-}
-.categoryItemContainer {
-	padding-top : 2%;
-}
 .categoryTitle {
 	float : bottom;
    	text-align : center;

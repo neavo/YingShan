@@ -5,7 +5,7 @@ Ext.define("Project.controller.publishView", {
 		control : {},
 	},
 	goBack : function () {
-		DoSwitch("publish", "childCategory");
+		DoSwitch("publish", "childCategory", "childCategory");
 		DB.titleTextFiled.setValue("");
 		DB.publisherTextFiled.setValue("");
 		DB.contactTextFiled.setValue("");
@@ -14,6 +14,5 @@ Ext.define("Project.controller.publishView", {
 		DB.categoryIdTextFiled.setValue("");
 		document.getElementById("publishImage").src = "resources/icons/defaultImage.png";
 		document.getElementById("imageStatus").innerHTML = "点击添加";
-		setActivatedController(this.getApplication().getController("childCategory"));
 	},
 });

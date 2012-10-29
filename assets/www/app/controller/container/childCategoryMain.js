@@ -17,7 +17,7 @@ Ext.define("Project.controller.container.childCategoryMain", {
 	},
 	// 无子频道
 	setActivatedView : function (id, title) {
-		DoSwitch("childCategory", "infoList");
+		DoSwitch("childCategory", "infoList", "infoList");
 		setActivatedCategory(id);
 		DB.infoListTop.setTitle(title);
 		DB.infoListMain.getStore().setProxy({
@@ -25,23 +25,20 @@ Ext.define("Project.controller.container.childCategoryMain", {
 			url : Website.serverUrl + "Server/info.jsp?categoryid=" + DB.activatedCategory + "&infoPageNum=1",
 		});
 		DB.infoListMain.getStore().load();
-		setActivatedController(this.getApplication().getController("infoList"));
 	},
 	// 自定义网页页面
 	setCustomView : function (html, title) {
-		DoSwitch("childCategory", "customHtml");
+		DoSwitch("childCategory", "customHtml", "customHtml");
 		DB.customHtmlTop.setTitle(title);
 		DB.customHtmlMain.setHtml(html);
-		setActivatedController(this.getApplication().getController("customHtml"));
 	},
 	// 发布信息页面
 	setPublishView : function (id, title) {
-		DoSwitch("childCategory", "publish");
+		DoSwitch("childCategory", "publish", "publishView");
 		DB.publishTop.setTitle(title);
 		setActivatedCategory(id);
 		DB.categoryIdTextFiled.setValue(DB.activatedCategory);
 		DB.publishIdTextFiled.setValue(Math.round(new Date().getTime() / 1000));
-		setActivatedController(this.getApplication().getController("publishView"));
 	},
 	// 响应按键点击
 	OnChildCategoryMainTap : function (list, index, target, record, e, eOpts) {

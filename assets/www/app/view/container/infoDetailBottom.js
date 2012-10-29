@@ -2,7 +2,6 @@ Ext.define("Project.view.container.infoDetailBottom", {
 	extend : "Ext.Toolbar",
 	xtype : "infoDetailBottom",
 	config : {
-		height : DB.screenHeight * 0.08,
 		docked : "bottom",
 		items : [{
 				xtype : "spacer",

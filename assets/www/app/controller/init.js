@@ -1,4 +1,4 @@
-Ext.define("Project.controller.init", {
+Ext.define("Project.controller.mainController", {
 	extend : "Ext.app.Controller",
 	config : {
 		refs : {
@@ -25,6 +25,8 @@ Ext.define("Project.controller.init", {
 		},
 	},
 	launch : function () {
+		DB.mainController = this;
+	
 		DB.mainContainer = this.getMainContainer();
 		
 		DB.homeTop = this.getHomeTop();

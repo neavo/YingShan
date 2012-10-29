@@ -27,13 +27,14 @@ function DoAlert(string) {
 };
 
 // 翻页
-function DoSwitch(thisView, nextView) {
+function DoSwitch(thisView, nextView, controller) {
 	DB[thisView + "Top"].hide();
 	DB[thisView + "Main"].hide();
 	DB[thisView + "Bottom"].hide();
 	DB[nextView + "Top"].show();
 	DB[nextView + "Main"].show();
 	DB[nextView + "Bottom"].show();
+	setActivatedController(DB.mainController.getApplication().getController(controller));
 };
 
 // 播放翻页动画

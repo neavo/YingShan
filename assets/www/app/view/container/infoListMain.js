@@ -2,7 +2,6 @@ Ext.define("Project.view.container.infoListMain", {
 	extend : "Ext.List",
 	xtype : "infoListMain",
 	config : {
-		height : DB.screenHeight * 0.84,
 		cls : "infoList",
 		store : "mainStore",
 		emptyText : "无更多记录",

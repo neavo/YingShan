@@ -2,7 +2,11 @@ Ext.define("Project.view.mainContainer", {
 	extend : "Ext.Container",
 	xtype : "mainContainer",
 	config : {
+		layout : "vbox",
 		cls : "mainContainer",
+		defaults : {
+			flex : 1, 
+		},
 		items : [{
 				xtype : "homeTop",
 			}, {

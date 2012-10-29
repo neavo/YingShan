@@ -3,7 +3,6 @@ Ext.define("Project.view.container.childCategoryTop", {
 	xtype : "childCategoryTop",
 	config : {
 		xtype : "toolbar",
-		height : DB.screenHeight * 0.08,
 		docked : "top",
 	},
 });

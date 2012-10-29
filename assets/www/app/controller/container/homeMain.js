@@ -25,10 +25,11 @@ Ext.define("Project.controller.container.homeMain", {
 	},
 	createHContainer : function (container) {
 		var hContainer = Ext.create("Ext.Container", {
-				layout : "hbox"
+				layout : "hbox",
 			});
-		container.add(hContainer);
 		hContainer.add(Ext.create("Ext.Spacer"));
+		container.add(Ext.create("Ext.Spacer"));
+		container.add(hContainer);
 		return hContainer
 	},
 	onCategoryContainerInitialize : function (container, eOpts) {
@@ -36,34 +37,33 @@ Ext.define("Project.controller.container.homeMain", {
 		var hContainer = this.createHContainer(container);
 		for (var key in Category) {
 			if (i == 5) {
-				var hContainer = this.createHContainer(container);
+				hContainer = this.createHContainer(container);
 				i = 1;
 			} else {
 				i = i + 1;
 			};
-			hContainer.add(Ext.create("Ext.Container", {
-					cls : "categoryItemContainer",
+			var categoryItemContainer = Ext.create("Ext.Container", {
 					html : "<img class = categoryIcon src = " + Category[key]["categoryIconUrl"] + " >"
 					 + "<div class = categoryTitle ><b>" + Category[key]["categoryTitle"] + "<b></div>",
-					parent : this,
 					categoryTitle : Category[key]["categoryTitle"],
 					childCategory : Category[key]["childCategory"],
-					setChildView : function (parent, childCategory, title) {
-						DoSwitch("home", "childCategory");
+					setChildView : function (childCategory, title) {
+						DoSwitch("home", "childCategory", "childCategory");
 						DB.childCategoryTop.setTitle(title);
 						DB.childCategoryMain.getStore().setData(childCategory);
-						setActivatedController(parent.getApplication().getController("childCategory"));
 					},
 					listeners : {
 						tap : {
 							fn : function () {
-								this.config.setChildView(this.config.parent, this.config.childCategory, this.config.categoryTitle);
+								this.config.setChildView(this.config.childCategory, this.config.categoryTitle);
 							},
 							element : "element",
 						},
 					},
-				}));
+				});
+			hContainer.add(categoryItemContainer);
 			hContainer.add(Ext.create("Ext.Spacer"));
 		};
+		container.add(Ext.create("Ext.Spacer"));
 	},
 });

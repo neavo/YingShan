@@ -2,11 +2,12 @@ Ext.define("Project.view.container.homeMain", {
 	extend : "Ext.Container",
 	xtype : "homeMain",
 	config : {
+		layout : "vbox",
 		items : [{
 				id : "adCarousel",
 				xtype : "carousel",
 				cls : "adCarousel",
-				height : DB.screenHeight * 0.38,
+				height : 200,
 				items : [{
 						xtype : "container",
 						html : "<img class = adImage src = resources/images/ad_01.jpg >"
@@ -23,8 +24,8 @@ Ext.define("Project.view.container.homeMain", {
 				],
 			}, {
 				id : "categoryContainer",
-				cls : "categoryContainer",
-				height : DB.screenHeight * 0.42,
+				layout : "vbox",
+				flex : 1,
 			},
 		],
 	},

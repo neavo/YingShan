@@ -4,7 +4,6 @@ Ext.define("Project.view.container.publishMain", {
 	config : {
 		layout : "vbox",
 		scrollable : false,
-		height : DB.screenHeight * 0.84,
 		items : [{
 				id : "titleTextFiled",
 				xtype : "textfield",

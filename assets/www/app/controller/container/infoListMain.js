@@ -42,7 +42,7 @@ Ext.define("Project.controller.container.infoListMain", {
 		});
 	},
 	onInfoListMainItemTap : function (list, index, e, eOpts) {
-		DoSwitch("infoList", "infoDetail");
+		DoSwitch("infoList", "infoDetail", "infoDetail");
 		if (list.getStore().getAt(index).get("videourl") != "" && list.getStore().getAt(index).get("videourl").toLowerCase() != "null") {
 			DB.videoUrl = list.getStore().getAt(index).get("videourl");
 			DB.scaleFlag = 0;
@@ -62,6 +62,5 @@ Ext.define("Project.controller.container.infoListMain", {
 				 + "<hr width = 100% size = 2 color = #000000 align = center noshade>"
 				 + "<div class = infoDetailContentNormal>" + list.getStore().getAt(index).get("content") + "</div>");
 		};
-		setActivatedController(this.getApplication().getController("infoDetail"));
 	},
 });

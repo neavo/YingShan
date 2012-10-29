@@ -1,16 +1,12 @@
 <!DOCTYPE HTML>
 
-<html manifest= "" lang = "en-US">
+<html manifest="" lang="en-US">
 	<head>
-		<meta charset = "UTF-8">
+		<meta charset="UTF-8">
 		<title>Project</title>
-		
+
 		<!-- Motorola & iOS Hack -->
 		<meta name = "format-detection" content = "telephone=no" />
-
-		<!-- Sencha Touch Lib -->
-		<script type = "text/javascript" src = "lib/sencha-touch-all.js" ></script>
-		<link rel = "stylesheet" type = "text/css" href = "lib/sencha-touch.css" >
 		
 		<!-- PhoneGap Lib -->
 		<script type = "text/javascript" src = "lib/cordova-2.1.0.js" ></script>
@@ -20,12 +16,6 @@
 		
 		<!-- Custom CSS File -->
 		<link rel = "stylesheet" type = "text/css" href = "resources/css/myApp.css" >
-		
-		<!-- Android 4.0.x Hack -->
-		<script type = "text/javascript" >
-			Ext.Loader.setConfig({ disableCaching: false });
-			Ext.Ajax.setDisableCaching(false);
-		</script>
 
 		<!-- Global Variable -->
 		<script type = "text/javascript" src = "module/globalVariable.js" ></script>
@@ -34,11 +24,11 @@
 		<script type = "text/javascript" src = "module/scriptBeforeMain.js" ></script>
 
 		<!-- The line below must be kept intact for Sencha Command to build your application -->
-		<script type = "text/javascript" src = "app.js" ></script>
+		<script id = "microloader" type = "text/javascript" src = "sdk/microloader/development.js" ></script>
 		
 		<!-- Script After Main -->
 		<script type = "text/javascript" src = "module/scriptAfterMain.js" ></script>
-		
+
 	</head>
 	<body></body>
 </html>

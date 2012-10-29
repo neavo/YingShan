@@ -5,7 +5,6 @@ Ext.define("Project.controller.customHtml", {
 		control : {},
 	},
 	goBack : function () {
-		DoSwitch("customHtml", "childCategory");
-		setActivatedController(this.getApplication().getController("childCategory"));
+		DoSwitch("customHtml", "childCategory", "childCategory");
 	},
 });
