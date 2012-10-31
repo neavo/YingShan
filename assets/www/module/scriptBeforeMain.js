@@ -18,30 +18,17 @@ function playVideo() {
 	window.plugins.videoPlayer.play(DB.videoUrl);
 };
 
-// 自定义的Alert
-function DoAlert(string) {
-	DB.mainContainer.hide();
-	Ext.Msg.alert(DB.versionInfo, string, function (buttonId, value, opt) {
-		DB.mainContainer.show();
-	});
-};
-
 // 翻页
-function DoSwitch(thisView, nextView, controller) {
-	DB[thisView + "Top"].hide();
-	DB[thisView + "Main"].hide();
-	DB[thisView + "Bottom"].hide();
-	DB[nextView + "Top"].show();
-	DB[nextView + "Main"].show();
-	DB[nextView + "Bottom"].show();
-	setActivatedController(DB.mainController.getApplication().getController(controller));
-};
-
-// 播放翻页动画
-function DoAnim() {
-	/*Ext.Anim.run(DB.mainContainer, "slide", {
-	out : false,
-	});*/
+function DoSwitch(view) {
+	var noView = view.replace("View", "");
+	DB[noView + "Top"].hide();
+	DB[noView + "Main"].hide();
+	DB[noView + "Bottom"].hide();
+	DB.mainContainer.setActiveItem(DB[view]);
+	DB[noView + "Top"].show();
+	DB[noView + "Main"].show();
+	DB[noView + "Bottom"].show();
+	setActivatedController(DB.mainController.getApplication().getController(view));
 };
 
 // 信息发布页面上传图片控件

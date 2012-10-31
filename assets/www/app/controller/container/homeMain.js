@@ -12,8 +12,10 @@ Ext.define("Project.controller.container.homeMain", {
 		},
 	},
 	launch : function () {
+		setActivatedController(this);
 		var t = 0;
 		var adCarousel = this.getAdCarousel();
+		adCarousel.setHeight(Ext.Viewport.getWindowWidth() * 3 / 5);
 		setInterval(function () {
 			if (t == 3) {
 				t = 0;
@@ -23,21 +25,22 @@ Ext.define("Project.controller.container.homeMain", {
 			adCarousel.setActiveItem(t);
 		}, 5000);
 	},
-	createHContainer : function (container) {
+	onCategoryContainerInitialize : function (container, eOpts) {
+		var i = 1;
 		var hContainer = Ext.create("Ext.Container", {
 				layout : "hbox",
 			});
 		hContainer.add(Ext.create("Ext.Spacer"));
 		container.add(Ext.create("Ext.Spacer"));
 		container.add(hContainer);
-		return hContainer
-	},
-	onCategoryContainerInitialize : function (container, eOpts) {
-		var i = 1;
-		var hContainer = this.createHContainer(container);
 		for (var key in Category) {
 			if (i == 5) {
-				hContainer = this.createHContainer(container);
+				hContainer = Ext.create("Ext.Container", {
+						layout : "hbox",
+					});
+				hContainer.add(Ext.create("Ext.Spacer"));
+				container.add(Ext.create("Ext.Spacer"));
+				container.add(hContainer);
 				i = 1;
 			} else {
 				i = i + 1;
@@ -48,7 +51,7 @@ Ext.define("Project.controller.container.homeMain", {
 					categoryTitle : Category[key]["categoryTitle"],
 					childCategory : Category[key]["childCategory"],
 					setChildView : function (childCategory, title) {
-						DoSwitch("home", "childCategory", "childCategory");
+						DoSwitch("childCategory");
 						DB.childCategoryTop.setTitle(title);
 						DB.childCategoryMain.getStore().setData(childCategory);
 					},

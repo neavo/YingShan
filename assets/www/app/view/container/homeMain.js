@@ -7,7 +7,6 @@ Ext.define("Project.view.container.homeMain", {
 				id : "adCarousel",
 				xtype : "carousel",
 				cls : "adCarousel",
-				height : 200,
 				items : [{
 						xtype : "container",
 						html : "<img class = adImage src = resources/images/ad_01.jpg >"

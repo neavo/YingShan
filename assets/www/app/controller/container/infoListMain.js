@@ -42,7 +42,7 @@ Ext.define("Project.controller.container.infoListMain", {
 		});
 	},
 	onInfoListMainItemTap : function (list, index, e, eOpts) {
-		DoSwitch("infoList", "infoDetail", "infoDetail");
+		DoSwitch("infoDetail");
 		if (list.getStore().getAt(index).get("videourl") != "" && list.getStore().getAt(index).get("videourl").toLowerCase() != "null") {
 			DB.videoUrl = list.getStore().getAt(index).get("videourl");
 			DB.scaleFlag = 0;

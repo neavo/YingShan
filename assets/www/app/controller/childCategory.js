@@ -5,6 +5,6 @@ Ext.define("Project.controller.childCategory", {
 		control : {},
 	},
 	goBack : function () {
-		DoSwitch("childCategory", "home", "homeView");
+		DoSwitch("homeView");
 	},
 });

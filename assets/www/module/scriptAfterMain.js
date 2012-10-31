@@ -64,9 +64,11 @@ var destinationType; // sets the format of returned value
 					DB.weather.text = result.forecasts[0].text;
 					DB.weather.low = result.forecasts[0].low;
 					DB.weather.high = result.forecasts[0].high;
-					Ext.getCmp("homeTop").setHtml(
-						"<img class = weatherImage src = " + "resources/weather/" + DB.weather.icon + ".png >"
-						 + "<div class = weatherTextLine><b>" + DB.weather.text + "　" + DB.weather.low + "℃ ~ " + DB.weather.high + "℃" + "<b></div>");
+					if (DB.homeTop.getHtml() != "" ) {
+						DB.homeTop.setHtml(
+							"<img class = weatherImage src = " + "resources/weather/" + DB.weather.icon + ".png >"
+							 + "<div class = weatherTextLine><b>" + DB.weather.text + "　" + DB.weather.low + "℃ ~ " + DB.weather.high + "℃" + "<b></div>");
+					};
 				};
 			},
 		});

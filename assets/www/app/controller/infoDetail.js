@@ -5,6 +5,6 @@ Ext.define("Project.controller.infoDetail", {
 		control : {},
 	},
 	goBack : function () {
-		DoSwitch("infoDetail", "infoList", "infoList");
+		DoSwitch("infoList");
 	},
 });

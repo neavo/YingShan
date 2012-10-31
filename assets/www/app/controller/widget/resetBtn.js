@@ -24,6 +24,7 @@ Ext.define("Project.controller.widget.resetBtn", {
 		DB.publishIdTextFiled = this.getPublishIdTextFiled();
 	},
 	onResetBtnTap : function () {
+		Ext.Msg.alert(DB.versionInfo, "表单已重置！");
 		DB.titleTextFiled.setValue("");
 		DB.publisherTextFiled.setValue("");
 		DB.contactTextFiled.setValue("");
@@ -32,6 +33,5 @@ Ext.define("Project.controller.widget.resetBtn", {
 		DB.categoryIdTextFiled.setValue("");
 		document.getElementById("publishImage").src = "resources/icons/defaultImage.png";
 		document.getElementById("imageStatus").innerHTML = "点击添加";
-		DoAlert("表单已重置！");
 	},
 });

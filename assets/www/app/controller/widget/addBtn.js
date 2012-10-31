@@ -28,19 +28,19 @@ Ext.define("Project.controller.widget.addBtn", {
 	},
 	onAddBtnTap : function () {
 		if (DB.titleTextFiled.getValue() == "" || DB.titleTextFiled.getValue().toLowerCase() == "null") {
-			DoAlert("必须输入标题！");
+			Ext.Msg.alert(DB.versionInfo, "必须输入标题！");
 			return;
 		} else if (DB.publisherTextFiled.getValue() == "" || DB.publisherTextFiled.getValue().toLowerCase() == "null") {
-			DoAlert("必须输入发布人！");
+			Ext.Msg.alert(DB.versionInfo, "必须输入发布人！");
 			return;
 		} else if (DB.contactTextFiled.getValue() == "" || DB.contactTextFiled.getValue().toLowerCase() == "null") {
-			DoAlert("必须输入联系方式！");
+			Ext.Msg.alert(DB.versionInfo, "必须输入联系方式！");
 			return;
 		} else if (DB.contentTextFiled.getValue() == "" || DB.contentTextFiled.getValue().toLowerCase() == "null") {
-			DoAlert("必须输入详细内容！");
+			Ext.Msg.alert(DB.versionInfo, "必须输入详细内容！");
 			return;
 		} else if (document.getElementById("publishImage").src != "file:///android_asset/www/resources/icons/defaultImage.png" && document.getElementById("imageStatus").innerHTML == "上传中 ...") {
-			DoAlert("请等待图片上传完毕！");
+			Ext.Msg.alert(DB.versionInfo, "请等待图片上传完毕！");
 			return;
 		} else {
 			DB.contentTextFiled.setValue(DB.contentTextFiled.getValue().replace(/\n/g, "</br>"));
@@ -58,7 +58,7 @@ Ext.define("Project.controller.widget.addBtn", {
 					message : "信息发布中..."
 				},
 				success : function () {
-					DoAlert("发布成功！");
+					Ext.Msg.alert(DB.versionInfo, "发布成功！");
 					DB.titleTextFiled.setValue("");
 					DB.publisherTextFiled.setValue("");
 					DB.contactTextFiled.setValue("");
@@ -70,6 +70,7 @@ Ext.define("Project.controller.widget.addBtn", {
 					return;
 				},
 				failure : function () {
+					Ext.Msg.alert(DB.versionInfo, "发布失败！");
 					DB.titleTextFiled.setValue("");
 					DB.publisherTextFiled.setValue("");
 					DB.contactTextFiled.setValue("");
@@ -78,9 +79,8 @@ Ext.define("Project.controller.widget.addBtn", {
 					DB.categoryIdTextFiled.setValue("");
 					document.getElementById("publishImage").src = "resources/icons/defaultImage.png";
 					document.getElementById("imageStatus").innerHTML = "点击添加";
-					DoAlert("发布失败！");
 					return;
-				}
+				},
 			});
 		};
 	},

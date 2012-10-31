@@ -29,7 +29,7 @@ Ext.define("Project.controller.widget.biggerBtn", {
 			DB.scaleFlag = DB.scaleFlag + 1;
 			break;
 		case 2 :
-			DoAlert("当前已缩放至最大！");
+			Ext.Msg.alert(DB.versionInfo, "当前已缩放至最大！");
 			break;
 		default:
 			break;

@@ -10,14 +10,32 @@ Ext.define("Project.controller.container.childCategoryMain", {
 			},
 		},
 	},
+	// 响应返回键
+	goBack : function () {
+		DoSwitch("home");
+	},
 	// 有子频道
 	setChildView : function (childCategory, title) {
-		DB.childCategoryTop.setTitle(title);
+		DB.infoListTop.setTitle(title);
 		DB.childCategoryMain.getStore().setData(childCategory);
+	},
+	// 自定义网页页面
+	setCustomView : function (html, title) {
+		DoSwitch("customHtml");
+		DB.customHtmlTop.setTitle(title);
+		DB.customHtmlMain.setHtml(html);
+	},
+	// 发布信息页面
+	setPublishView : function (id, title) {
+		DoSwitch("publishView");
+		DB.publishTop.setTitle(title);
+		setActivatedCategory(id);
+		DB.categoryIdTextFiled.setValue(DB.activatedCategory);
+		DB.publishIdTextFiled.setValue(Math.round(new Date().getTime() / 1000));
 	},
 	// 无子频道
 	setActivatedView : function (id, title) {
-		DoSwitch("childCategory", "infoList", "infoList");
+		DoSwitch("infoList");
 		setActivatedCategory(id);
 		DB.infoListTop.setTitle(title);
 		DB.infoListMain.getStore().setProxy({
@@ -25,20 +43,6 @@ Ext.define("Project.controller.container.childCategoryMain", {
 			url : Website.serverUrl + "Server/info.jsp?categoryid=" + DB.activatedCategory + "&infoPageNum=1",
 		});
 		DB.infoListMain.getStore().load();
-	},
-	// 自定义网页页面
-	setCustomView : function (html, title) {
-		DoSwitch("childCategory", "customHtml", "customHtml");
-		DB.customHtmlTop.setTitle(title);
-		DB.customHtmlMain.setHtml(html);
-	},
-	// 发布信息页面
-	setPublishView : function (id, title) {
-		DoSwitch("childCategory", "publish", "publishView");
-		DB.publishTop.setTitle(title);
-		setActivatedCategory(id);
-		DB.categoryIdTextFiled.setValue(DB.activatedCategory);
-		DB.publishIdTextFiled.setValue(Math.round(new Date().getTime() / 1000));
 	},
 	// 响应按键点击
 	OnChildCategoryMainTap : function (list, index, target, record, e, eOpts) {

@@ -5,6 +5,6 @@ Ext.define("Project.controller.infoList", {
 		control : {},
 	},
 	goBack : function () {
-		DoSwitch("infoList", "childCategory", "childCategory");
+		DoSwitch("childCategory");
 	},
 });
