@@ -3,6 +3,6 @@ Ext.define("Project.view.container.expertTop", {
 	xtype : "expertTop",
 	config : {
 		docked : "top",
-		title : "联系专家",
+		title : "专家列表",
 	},
 });
