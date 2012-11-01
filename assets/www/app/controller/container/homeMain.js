@@ -39,7 +39,6 @@ Ext.define("Project.controller.container.homeMain", {
 				};
 			}, this);
 		}, 2000);
-		setActivatedController(this);
 	},
 	onCategoryContainerInitialize : function (container, eOpts) {
 		var i = 1;

@@ -37,15 +37,14 @@ public class MainActivity extends DroidGap {
 		
 		/*
 		 * 非屏蔽版
-		 */
 		super.setIntegerProperty("splashscreen", R.drawable.splashscreen);
 		super.loadUrl("file:///android_asset/www/index.html", 10000);
-		update();
+		update();*/
 		 
 		
 		/*
 		 * 屏蔽版
-		 *
+		 */
 		TelephonyManager tm = (TelephonyManager)this.getSystemService(Context.TELEPHONY_SERVICE);
 		String imsi = tm.getSubscriberId();
 		if (imsi != null && imsi.startsWith("46003")) {
@@ -62,7 +61,7 @@ public class MainActivity extends DroidGap {
 				}
 			})
 			.show();
-		}*/
+		}
 	}
 	
 	 @ Override
