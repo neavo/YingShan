@@ -1,6 +1,6 @@
-Ext.define("Project.view.container.childCategoryBottom", {
+Ext.define("Project.view.container.expertBottom", {
 	extend : "Ext.Toolbar",
-	xtype : "childCategoryBottom",
+	xtype : "expertBottom",
 	config : {
 		docked : "bottom",
 		items : [{
@@ -17,7 +17,7 @@ Ext.define("Project.view.container.childCategoryBottom", {
 				xtype : "backBtn",
 			}, {
 				xtype : "spacer",
-			}, 
+			},	
 		],
 	},
 });

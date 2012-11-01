@@ -6,18 +6,18 @@ Ext.define("Project.view.container.infoListBottom", {
 		items : [{
 				xtype : "spacer",
 			}, {
-				xtype : "prevBtn",
+				xtype : "updateBtn",
 			}, {
 				xtype : "spacer",
 			}, {
-				xtype : "nextBtn",
+				xtype : "aboutBtn",
 			}, {
 				xtype : "spacer",
 			}, {
 				xtype : "backBtn",
 			}, {
 				xtype : "spacer",
-			},
+			}, 
 		],
 	},
 });

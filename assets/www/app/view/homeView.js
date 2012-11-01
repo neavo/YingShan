@@ -13,7 +13,6 @@ Ext.define("Project.view.homeView", {
 				xtype : "homeMain",
 			}, {
 				xtype : "homeBottom",
-			},
-		],
+			}, ],
 	},
 });

@@ -3,7 +3,6 @@ Ext.define("Project.controller.widget.addBtn", {
 	config : {
 		refs : {
 			addBtn : "addBtn",
-			
 			titleTextFiled : "#titleTextFiled",
 			publisherTextFiled : "#publisherTextFiled",
 			contactTextFiled : "#contactTextFiled",
@@ -24,7 +23,6 @@ Ext.define("Project.controller.widget.addBtn", {
 		DB.contentTextFiled = this.getContentTextFiled();
 		DB.publishIdTextFiled = this.getPublishIdTextFiled();
 		DB.categoryIdTextFiled = this.getCategoryIdTextFiled();
-		
 	},
 	onAddBtnTap : function () {
 		if (DB.titleTextFiled.getValue() == "" || DB.titleTextFiled.getValue().toLowerCase() == "null") {
@@ -44,15 +42,13 @@ Ext.define("Project.controller.widget.addBtn", {
 			return;
 		} else {
 			DB.contentTextFiled.setValue(DB.contentTextFiled.getValue().replace(/\n/g, "</br>"));
-			DB.contentTextFiled.setValue(
-				"联系方式：" + DB.contactTextFiled.getValue() + "<br/>"
+			DB.contentTextFiled.setValue("联系方式：" + DB.contactTextFiled.getValue() + "<br/>"
 				 + "详细内容：" + DB.contentTextFiled.getValue());
 			if (document.getElementById("publishImage").src != "file:///android_asset/www/resources/icons/defaultImage.png" && document.getElementById("imageStatus").innerHTML == "上传成功！") {
-				DB.contentTextFiled.setValue(
-					DB.contentTextFiled.getValue() + "</br></br>"
+				DB.contentTextFiled.setValue(DB.contentTextFiled.getValue() + "</br></br>"
 					 + "<img style = \" max-width : 300px; max-height : 300px; display : block; margin : auto; \" src = " + Website.serverUrl + "upload/image/QA/" + DB.publishIdTextFiled.getValue() + "/1 />");
 			};
-			DB.publishMain.setUrl(Website.serverUrl + "Server/publish.jsp");
+			DB.publishMain.setUrl(Website.serverUrl + "Push/doPublish.jsp");
 			DB.publishMain.submit({
 				waitMsg : {
 					message : "信息发布中..."

@@ -10,22 +10,28 @@ Ext.define("Project.controller.container.childCategoryMain", {
 			},
 		},
 	},
-	// 响应返回键
 	goBack : function () {
 		DoSwitch("home");
 	},
-	// 有子频道
 	setChildView : function (childCategory, title) {
 		DB.infoListTop.setTitle(title);
 		DB.childCategoryMain.getStore().setData(childCategory);
 	},
-	// 自定义网页页面
+	setActivatedView : function (id, title) {
+		DoSwitch("infoList");
+		setActivatedCategory(id);
+		DB.infoListTop.setTitle(title);
+		DB.infoListMain.getStore().setProxy({
+			type : "jsonp",
+			url : Website.serverUrl + "Pull/getNews.jsp?categoryid=" + DB.activatedCategory,
+		});
+		DB.infoListMain.getStore().loadPage(1);
+	},
 	setCustomView : function (html, title) {
 		DoSwitch("customHtml");
 		DB.customHtmlTop.setTitle(title);
 		DB.customHtmlMain.setHtml(html);
 	},
-	// 发布信息页面
 	setPublishView : function (id, title) {
 		DoSwitch("publishView");
 		DB.publishTop.setTitle(title);
@@ -33,26 +39,20 @@ Ext.define("Project.controller.container.childCategoryMain", {
 		DB.categoryIdTextFiled.setValue(DB.activatedCategory);
 		DB.publishIdTextFiled.setValue(Math.round(new Date().getTime() / 1000));
 	},
-	// 无子频道
-	setActivatedView : function (id, title) {
-		DoSwitch("infoList");
-		setActivatedCategory(id);
-		DB.infoListTop.setTitle(title);
-		DB.infoListMain.getStore().setProxy({
-			type : "jsonp",
-			url : Website.serverUrl + "Server/info.jsp?categoryid=" + DB.activatedCategory + "&infoPageNum=1",
-		});
-		DB.infoListMain.getStore().load();
+	setExpertView : function (id, title) {
+		DoSwitch("expertView");
+		DB.expertMain.getStore().loadPage(1);
 	},
-	// 响应按键点击
 	OnChildCategoryMainTap : function (list, index, target, record, e, eOpts) {
 		var data = record.getData();
 		if (data.categoryStyle == "parentCategory") {
 			this.setChildView(data.childCategory, data.categoryTitle);
 		} else if (data.categoryStyle == "customHtml") {
 			this.setCustomView(data.customHtml, data.categoryTitle);
-		} else if (data.categoryStyle == "publishPanel") {
+		} else if (data.categoryStyle == "publishView") {
 			this.setPublishView(data.categoryId, data.categoryTitle);
+		} else if (data.categoryStyle == "expertView") {
+			this.setExpertView(data.categoryId);
 		} else if (data.categoryStyle == "webUrl") {
 			window.open(data.webUrl, "_blank");
 		} else {

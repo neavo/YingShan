@@ -7,8 +7,7 @@ Ext.define("Project.view.container.childCategoryMain", {
 		onItemDisclosure : true,
 		emptyText : "无更多记录",
 		loadingText : "读取中 ...",
-		itemTpl :
-		"<img class = childCategoryIcon src = {categoryIconUrl} />"
+		itemTpl : "<img class = childCategoryIcon src = {categoryIconUrl} />"
 		 + "<div class = childCategoryTitle><b>{categoryTitle} </b></div>",
 	},
 });

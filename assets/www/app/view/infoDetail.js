@@ -13,7 +13,6 @@ Ext.define("Project.view.infoDetail", {
 				xtype : "infoDetailMain",
 			}, {
 				xtype : "infoDetailBottom",
-			},
-		],
+			}, ],
 	},
 });

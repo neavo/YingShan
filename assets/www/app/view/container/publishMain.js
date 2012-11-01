@@ -51,15 +51,14 @@ Ext.define("Project.view.container.publishMain", {
 						listeners : {
 							tap : {
 								fn : function () {
-									DoGetPhoto("1");
+									DoGetPhoto();
 								},
 								element : "element",
 							},
 						},
 					}, {
 						xtype : "spacer",
-					},
-				],
+					}, ],
 			}, {
 				id : "publishIdTextFiled",
 				xtype : "numberfield",
@@ -70,7 +69,6 @@ Ext.define("Project.view.container.publishMain", {
 				xtype : "numberfield",
 				hidden : true,
 				name : "categoryId",
-			},
-		],
+			}, ],
 	},
 });

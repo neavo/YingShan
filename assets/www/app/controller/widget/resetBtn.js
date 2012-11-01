@@ -3,7 +3,6 @@ Ext.define("Project.controller.widget.resetBtn", {
 	config : {
 		refs : {
 			resetBtn : "resetBtn",
-			
 			titleTextFiled : "#titleTextFiled",
 			publisherTextFiled : "#publisherTextFiled",
 			contactTextFiled : "#contactTextFiled",

@@ -1,6 +1,6 @@
-Ext.define("Project.view.publishView", {
+Ext.define("Project.view.expertView", {
 	extend : "Ext.Container",
-	xtype : "publishView",
+	xtype : "expertView",
 	config : {
 		layout : "vbox",
 		cls : "mainContainer",
@@ -8,11 +8,11 @@ Ext.define("Project.view.publishView", {
 			flex : 1,
 		},
 		items : [{
-				xtype : "publishTop",
+				xtype : "expertTop",
 			}, {
-				xtype : "publishMain",
+				xtype : "expertMain",
 			}, {
-				xtype : "publishBottom",
+				xtype : "expertBottom",
 			}, ],
 	},
 });

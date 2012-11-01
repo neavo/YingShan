@@ -13,7 +13,6 @@ Ext.define("Project.view.infoList", {
 				xtype : "infoListMain",
 			}, {
 				xtype : "infoListBottom",
-			}, 
-		],
+			}, ],
 	},
 });

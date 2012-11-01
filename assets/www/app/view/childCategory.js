@@ -13,7 +13,7 @@ Ext.define("Project.view.childCategory", {
 				xtype : "childCategoryMain",
 			}, {
 				xtype : "childCategoryBottom",
-			},
+			}, 
 		],
 	},
 });
