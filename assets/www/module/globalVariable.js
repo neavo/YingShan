@@ -2,7 +2,7 @@ var Website = {
 	serverUrl : "http://221.235.190.14:8080/AjaxServer/",
 };
 var DB = {
-	versionInfo : "掌上 • 英山 v3.6",
+	versionInfo : "掌上 • 英山 v3.7",
 	activatedController : "",
 	activatedCategory : "",
 	weather : {
@@ -331,13 +331,13 @@ var Category = [{
 				categoryId : "451",
 				categoryTitle : "卫生快讯",
 				categoryIconUrl : "resources/icons/07.png",
-			}, {
+			}, /*{
 				categoryId : "452",
 				categoryTitle : "档案查询",
 				categoryIconUrl : "resources/icons/07.png",
 				categoryStyle : "webUrl",
 				webUrl : "http://219.139.49.58:8888/health/website/web_index_sj.action",
-			}, {
+			}, */{
 				categoryId : "453",
 				categoryTitle : "健康知识",
 				categoryIconUrl : "resources/icons/07.png",
