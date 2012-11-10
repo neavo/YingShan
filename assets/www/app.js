@@ -6,6 +6,7 @@ Ext.application({
 		"Ext.MessageBox",
 		"Ext.field.Number",
 		"Ext.dataview.List",
+		"Ext.plugin.ListPaging",
 		"Ext.data.proxy.JsonP",
 		"Ext.carousel.Carousel", 
 	],

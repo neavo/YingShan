@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html manifest = "" lang = "en-US">
+	<head>
+		<meta charset = "UTF-8">
+		<title>Project</title>
+		
+		<!-- Motorola & iOS Hack -->
+		<meta name = "format-detection" content = "telephone=no" />
+		
+		<!-- PhoneGap Lib -->
+		<script type = "text/javascript" src = "lib/cordova-2.2.0.js" ></script>
+
+		<!-- PhoneGap Plugin -->
+		<script type = "text/javascript" src = "lib/VideoPlayer-Plugin.js" ></script>
+
+		<!-- Custom CSS File -->
+		<link rel = "stylesheet" type = "text/css" href = "resources/css/myApp.css" >
+		
+		<!-- Global Variable -->
+		<script type = "text/javascript" src = "module/globalVariable.js" ></script>
+
+		<!-- Script Before Main -->
+		<script type = "text/javascript" src = "module/scriptBeforeMain.js" ></script>
+		
+		<!-- Script After Main -->
+		<script type = "text/javascript" src = "module/scriptAfterMain.js" ></script>
+		
+		<!-- The line below must be kept intact for Sencha Command to build your application -->
+		<script type="text/javascript">(function(h){function f(c,d){document.write('<meta name="'+c+'" content="'+d+'">')}if("undefined"===typeof g)var g=h.Ext={};g.blink=function(c){var d=c.js||[],c=c.css||[],b,e,a;f("viewport","width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no");f("apple-mobile-web-app-capable","yes");f("apple-touch-fullscreen","yes");b=0;for(e=c.length;b<e;b++)a=c[b],"string"!=typeof a&&(a=a.path),document.write('<link rel="stylesheet" href="'+a+'">');b=0;for(e=d.length;b<
+e;b++)a=d[b],"string"!=typeof a&&(a=a.path),document.write('<script src="'+a+'"><\/script>')}})(this);;Ext.blink({"id":"c0e89d0a-e1ab-442d-828f-a7e12eece5e9","js":[{"update":"delta","path":"app.js","type":"js","bundle":true}],"css":[{"update":"delta","type":"css","path":"resources/css/app.css"}]})</script>
+	</head>
+	<body></body>
+</html>
