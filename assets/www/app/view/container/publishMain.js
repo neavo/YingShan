@@ -40,12 +40,13 @@ Ext.define("Project.view.container.publishMain", {
 			}, {
 				xtype : "container",
 				flex : 1,
-				cls : "publishImageContainer",
+				cls : "BackGround",
 				layout : "hbox",
 				items : [{
 						xtype : "spacer",
 					}, {
 						xtype : "container",
+						style : "margin : 1em;",
 						html : "<img id = publishImage class = publishImage src = resources/icons/defaultImage.png>"
 						 + "<div id = imageStatus class = publishImageStatus >点击添加</div>",
 						listeners : {
@@ -58,7 +59,8 @@ Ext.define("Project.view.container.publishMain", {
 						},
 					}, {
 						xtype : "spacer",
-					}, ],
+					},
+				],
 			}, {
 				id : "publishIdTextFiled",
 				xtype : "numberfield",
@@ -69,6 +71,7 @@ Ext.define("Project.view.container.publishMain", {
 				xtype : "numberfield",
 				hidden : true,
 				name : "categoryId",
-			}, ],
+			},
+		],
 	},
 });

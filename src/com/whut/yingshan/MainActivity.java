@@ -8,7 +8,6 @@ import java.net.URL;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -18,9 +17,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
-import android.telephony.TelephonyManager;
 import android.util.Log;
-import android.view.Menu;
 import android.widget.Toast;
 
 import org.apache.cordova. * ;
@@ -38,8 +35,9 @@ public class MainActivity extends DroidGap {
 		/*
 		 * 非屏蔽版
 		 */
+		
 		super.setIntegerProperty("splashscreen", R.drawable.splashscreen);
-		super.loadUrl("file:///android_asset/www/index.html", 10000);
+		super.loadUrl("file:///android_asset/www/index.html", 30000);
 		update();
 		 
 		
@@ -64,13 +62,7 @@ public class MainActivity extends DroidGap {
 			.show();
 		}*/
 	}
-	
-	 @ Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.activity_main, menu);
-		return true;
-	}
-	
+		
 	private final int UPDATA_NONEED = 0;
 	private final int UPDATA_CLIENT = 1;
 	private final int GET_UNDATAINFO_ERROR = 2;
@@ -205,5 +197,4 @@ public class MainActivity extends DroidGap {
 		intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
 		startActivity(intent);
 	}
-	
 }

@@ -3,7 +3,6 @@ Ext.define("Project.view.infoList", {
 	xtype : "infoList",
 	config : {
 		layout : "vbox",
-		cls : "mainContainer",
 		defaults : {
 			flex : 1,
 		},

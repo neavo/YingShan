@@ -3,7 +3,6 @@ Ext.define("Project.view.customHtml", {
 	xtype : "customHtml",
 	config : {
 		layout : "vbox",
-		cls : "mainContainer",
 		defaults : {
 			flex : 1,
 		},

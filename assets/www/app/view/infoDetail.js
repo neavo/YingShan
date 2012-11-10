@@ -3,7 +3,6 @@ Ext.define("Project.view.infoDetail", {
 	xtype : "infoDetail",
 	config : {
 		layout : "vbox",
-		cls : "mainContainer",
 		defaults : {
 			flex : 1,
 		},

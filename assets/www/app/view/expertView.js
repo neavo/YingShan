@@ -3,7 +3,6 @@ Ext.define("Project.view.expertView", {
 	xtype : "expertView",
 	config : {
 		layout : "vbox",
-		cls : "mainContainer",
 		defaults : {
 			flex : 1,
 		},

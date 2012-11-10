@@ -4,6 +4,6 @@ Ext.define("Project.view.container.infoDetailMain", {
 	config : {
 		scrollable : "vertical",
 		styleHtmlContent : true,
-		cls : "detail",
+		cls : "BackGround",
 	},
 });

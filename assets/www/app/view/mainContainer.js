@@ -17,6 +17,7 @@ Ext.define("Project.view.mainContainer", {
 				xtype : "publishView",
 			}, {
 				xtype : "expertView",
-			}, ],
+			},
+		],
 	},
 });

@@ -14,31 +14,26 @@ Ext.define("Project.controller.container.homeMain", {
 	launch : function () {
 		var adCarousel = this.getAdCarousel();
 		adCarousel.setHeight(Ext.Viewport.getWindowWidth() * 3 / 5);
-		setTimeout(function () {
-			Ext.getStore("adStore").load(function (records, operation, success) {
-				if (success && records.length != 0) {
-					for (var key in records) {
-						adCarousel.add(Ext.create("Ext.Container", {
-								html : "<img class = adImage src = " + Ext.getStore("adStore").getAt(key).get("adcontent") + ">",
-							}));
-					};
-					adCarousel.setActiveItem(0);
-					var t = 0;
-					setInterval(function () {
-						if (t == records.length - 1) {
-							t = 0;
-						} else {
-							t = t + 1;
-						}
-						adCarousel.setActiveItem(t);
-					}, 5000);
-				} else {
+		Ext.getStore("adStore").load(function (records, operation, success) {
+			if (success && records.length != 0) {
+				adCarousel.removeAll(true);
+				for (var key in records) {
 					adCarousel.add(Ext.create("Ext.Container", {
-							html : "<img class = adImage src = resources/images/defaultAd.jpg >",
+							html : "<img class = adImage src = " + Ext.getStore("adStore").getAt(key).get("adcontent") + ">",
 						}));
 				};
-			}, this);
-		}, 2000);
+				var t = 0;
+				setInterval(function () {
+					if (t == records.length - 1) {
+						t = 0;
+					} else {
+						t = t + 1;
+					}
+					adCarousel.setActiveItem(t);
+				}, 5000);
+				adCarousel.setActiveItem(0);
+			};
+		}, this);
 	},
 	onCategoryContainerInitialize : function (container, eOpts) {
 		var i = 1;

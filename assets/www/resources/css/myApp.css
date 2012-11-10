@@ -1,8 +1,18 @@
 /*
-	主页样式
+	背景样式
 */
-.mainContainer {
+.BackGround {
 	background : url(../images/mainBackground.png);
+}
+
+/*
+	ListPaging插件样式
+*/
+.ListPagingLoadMoreText {
+	font-size : 0.8em;
+	text-align : center;
+	color : #808080;
+	padding-top : 0.3em;
 }
 
 /*
@@ -55,41 +65,35 @@
 /*
 	子频道页面样式
 */
-.childCategoryList .x-list-item {
-	height : 4.4em;
-}
-.childCategoryList .x-list-item .x-list-item-label {
-	height : 4.4em;
-}
-.childCategoryList .x-list-disclosure {
-	padding-bottom : 2.4em;
-	margin-right : 0.5em;
-}
 .childCategoryIcon {
-	width : 3em;
-	height : 3em;
 	float : left;
+	width : 2.5em;
+	height : 2.5em;
+	margin-bottom : 0.5em;
 }
 .childCategoryTitle {
+	float : left;
 	font-size : 1.2em;
-	padding-top : 0.7em;
-	padding-left : 1.5em;
+	margin-top : 0.5em;
+	margin-left : 1em;
 	overflow : hidden;
+}
+.childCategoryDisclosureIcon {
+	float : right;
+	max-width : 1.5em;
+	max-height : 1.5em;
+	margin-right : 0.5em;
+	margin-top : 0.5em;
 }
 
 /*
 	信息列表样式
 */
-.infoList .x-list-item {
-	height : 5.1em;
-}
-.infoList .x-list-item .x-list-item-label {
-	height : 5.1em;
-}
 .infoListImage {
-	width : 4em;
-	height : 4em;
 	float : left;
+	width :3.5em;
+	height : 3.5em;
+	margin-bottom : 0.5em;
 }
 .infoListTitle {
 	text-align : center;
@@ -97,20 +101,12 @@
 	line-height : 1.2em;
 	height : 2.4em;
 	padding-left : 0.9em;
+	margin-bottom : 0.7em;
 	overflow : hidden;
 }
-.infoListData {
+.infoListDataPubliser {
 	text-align : center;
 	font-size : 0.6em;
-	margin-top : 0.5em;
-	color :  #808080;
-	padding-left : 1.2em;
-	overflow : hidden;
-}
-.infoListPubliser {
-	text-align : center;
-	font-size : 0.6em;
-	margin-top : 0.5em;
 	color :  #808080;
 	padding-left : 1.2em;
 	overflow : hidden;
@@ -165,9 +161,6 @@
 /*
 	信息发布页面样式
 */
-.publishImageContainer {
-	background : #FFFFFF;
-}
 .publishImage {
 	max-width : 10em;
 	max-height : 4.5em;
@@ -179,40 +172,32 @@
     font-size : 0.8em;
     color : #808080;
 }
-.publishTextField input::-webkit-input-placeholder {  
-	color : #2e4bc5;  
-}  
 
 /*
 	专家列表样式
 */
-.expertList .x-list-item {
-	height : 8em;
-}
-.expertList .x-list-item .x-list-item-label {
-	height : 8em;
-}
 .expertListImage {
 	width : 4.8em;
 	height : 6.7em;
 	float : left;
+	margin-bottom : 0.6em;
 }
-.expertListTitle {
-	font-size : 0.8em;
+.expertListName {
+	font-size : 0.75em;
 	padding-left : 0.5em;
 	overflow : hidden;
 }
 .expertListInfo {
-	font-size : 0.8em;
-	padding-top : 0.2em;
+	font-size : 0.75em;
 	padding-left : 0.5em;
 	overflow : hidden;
+	margin-top : 0.15em;
 }
 .expertListIDescription {
-	font-size : 0.8em;
-	line-height : 1.1em;
-	height : 3.4em;
-	padding-top : 0.2em;
+	font-size : 0.75em;
+	line-height : 1.05em;
+	height : 5.05em;
+	margin-top : 0.15em;
 	padding-left : 0.5em;
 	overflow : hidden;
 }

@@ -3,7 +3,6 @@ Ext.define("Project.view.publishView", {
 	xtype : "publishView",
 	config : {
 		layout : "vbox",
-		cls : "mainContainer",
 		defaults : {
 			flex : 1,
 		},
