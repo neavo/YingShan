@@ -7,9 +7,6 @@
 	};
 	// 响应返回键
 	function onBackButtonTap() {
-		if (window.plugins.childBrowser) {
-			window.plugins.childBrowser.close();
-		};
 		DB.activatedController.goBack();
 	};
 };

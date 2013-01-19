@@ -2,7 +2,7 @@ var Website = {
 	serverUrl : "http://221.235.190.14:8080/AjaxServer/",
 };
 var DB = {
-	versionInfo : "掌上 • 英山 v3.8",
+	versionInfo : "智慧 • 英山 v3.9",
 	activatedController : "",
 	activatedCategory : "",
 	weather : {

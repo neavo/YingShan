@@ -54,7 +54,7 @@ Ext.define("Project.controller.container.childCategoryMain", {
 		} else if (data.categoryStyle == "expertView") {
 			this.setExpertView(data.categoryId);
 		} else if (data.categoryStyle == "webUrl") {
-			window.plugins.childBrowser.showWebPage(data.webUrl, {showLocationBar : false});
+			window.open(data.webUrl, "_system", "location=no");
 		} else {
 			this.setActivatedView(data.categoryId, data.categoryTitle);
 		};
