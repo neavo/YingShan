@@ -20,19 +20,17 @@ import org.json.JSONException;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 
-import org.apache.cordova.api.CallbackContext;
-import org.apache.cordova.api.CordovaPlugin;
+import org.apache.cordova.api.Plugin;
 import org.apache.cordova.api.PluginResult;
 
-public class VideoPlayer extends CordovaPlugin {
+public class VideoPlayer extends Plugin {
     private static final String YOU_TUBE = "youtube.com";
     private static final String ASSETS = "file:///android_asset/";
 
     @Override
-    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) {
+    public PluginResult execute(String action, JSONArray args, String callbackId) {
         PluginResult.Status status = PluginResult.Status.OK;
         String result = "";
 
@@ -43,13 +41,12 @@ public class VideoPlayer extends CordovaPlugin {
             else {
                 status = PluginResult.Status.INVALID_ACTION;
             }
-            callbackContext.sendPluginResult(new PluginResult(status, result));
+            return new PluginResult(status, result);
         } catch (JSONException e) {
-            callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.JSON_EXCEPTION));
+            return new PluginResult(PluginResult.Status.JSON_EXCEPTION);
         } catch (IOException e) {
-            callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.IO_EXCEPTION));
+            return new PluginResult(PluginResult.Status.IO_EXCEPTION);
         }
-        return true;
     }
 
     private void playVideo(String url) throws IOException {
@@ -71,12 +68,7 @@ public class VideoPlayer extends CordovaPlugin {
         if (url.contains(YOU_TUBE)) {
             // If we don't do it this way you don't have the option for youtube
             uri = Uri.parse("vnd.youtube:" + uri.getQueryParameter("v"));
-            if (isYouTubeInstalled()) {
-                intent = new Intent(Intent.ACTION_VIEW, uri);
-            } else {
-                intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("market://details?id=com.google.android.youtube"));
-            }
+            intent = new Intent(Intent.ACTION_VIEW, uri);
         } else if(url.contains(ASSETS)) {
             // get file path in assets folder
             String filepath = url.replace(ASSETS, "");
@@ -118,15 +110,5 @@ public class VideoPlayer extends CordovaPlugin {
             out.write(buf, 0, len);
         in.close();
         out.close();
-    }
-    
-    private boolean isYouTubeInstalled() {
-        PackageManager pm = this.cordova.getActivity().getPackageManager();
-        try {
-            pm.getPackageInfo("com.google.android.youtube", PackageManager.GET_ACTIVITIES);
-            return true;
-        } catch (PackageManager.NameNotFoundException e) {
-            return false;
-        }
     }
 }
