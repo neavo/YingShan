@@ -1,9 +1,9 @@
 <resources>
 
-    <string name="app_name">智慧 • 英山</string>
+    <string name="app_name">智慧英山</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_main">智慧 • 英山</string>
+    <string name="title_activity_main">智慧英山</string>
     <string name="versionXmlUrl">http://221.235.190.14:8080/CheckUpdate/ServerVersion.xml</string>
 
 </resources>
